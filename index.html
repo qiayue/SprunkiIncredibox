@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprunkiIncredibox.com: Sprunki Incredibox - Create Your Own Sprunky Beats!</title>
+    <meta name="description" content="Dive into the world of Sprunki Incredibox! Mix, match, and create unique beats with our quirky characters. Experience music creation like never before.">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://SprunkiIncredibox.com/"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a0e0e;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --section-padding: 80px 0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .hero {
+            background: url('./img/home-header2.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .cta-button:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        section {
+            padding: var(--section-padding);
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        .feature-grid, .step-grid, .mode-grid, .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .feature-item, .step-item, .mode-item, .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-item:hover, .step-item:hover, .mode-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .feature-icon, .step-number {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .about-sprunki, .sprunki-history {
+            background-color: #f9f9f9;
+        }
+        .sprunki-history {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .tip-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .tip-list li {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+        .tip-list li::before {
+            content: "\f0eb";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        .faq-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .faq-question::before {
+            content: "\f059";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 3vh;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .nav-links {
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            .nav-links {
+                position: absolute;
+                right: 0px;
+                height: 92vh;
+                top: 8vh;
+                background-color: var(--primary-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+            }
+            .nav-links li {
+                opacity: 0;
+            }
+            .burger {
+                display: block;
+            }
+        }
+
+        .nav-active {
+            transform: translateX(0%);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="#"><i class="fas fa-music"></i> SprunkiIncredibox.com</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#play-now"><i class="fas fa-play"></i> Play Now</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+                    <li><a href="#how-to"><i class="fas fa-question-circle"></i> How to Play</a></li>
+                    <li><a href="#modes"><i class="fas fa-layer-group"></i> Modes</a></li>
+                    <li><a href="#community"><i class="fas fa-users"></i> Community</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Welcome to Sprunki Incredibox</h1>
+            <p>Create, mix, and groove with the spunkiest beats around!</p>
+            <p>SprunkiIncredibox.com</p>
+            <a href="#play-now" class="cta-button">Start Mixing Now</a>
+        </div>
+    </section>
+
+    <section class="about-sprunki" id="about">
+        <div class="container">
+            <h2>What is Sprunki Incredibox?</h2>
+            <p>Sprunki Incredibox is not just a game; it's a musical revolution! Born from the wildly popular Incredibox platform, Sprunki takes beat creation to a whole new level of fun and creativity. With Sprunki Incredibox, you're not just making music – you're crafting sprunky symphonies that defy convention and unleash your inner musical maverick.</p>
+            <p>At its core, Sprunki Incredibox is all about mixing and matching quirky sounds to create unique, sprunky beats. But what sets Sprunki apart is its cast of lovably weird characters, each bringing their own sprunky flavor to your musical concoctions. From beatboxing robots to yodeling yetis, the Sprunki crew is here to make your music-making experience unforgettable.</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Sprunki Incredibox Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Unique Soundscapes</h3>
+                    <p>Discover a world of sprunky sounds and offbeat samples.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🕺</div>
+                    <h3>Quirky Characters</h3>
+                    <p>Meet our cast of eccentric Sprunki beatboxers and singers.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌈</div>
+                    <h3>Vibrant Visuals</h3>
+                    <p>Immerse yourself in a colorful, animated Sprunki world.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Sprunki Effects</h3>
+                    <p>Add zany effects to create truly unique compositions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-to">
+        <div class="container">
+            <h2>How to Sprunki Incredibox</h2>
+            <div class="step-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Sprunki</h3>
+                    <p>Select from our lineup of quirky characters.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Mix Your Beats</h3>
+                    <p>Drag and drop to create your sprunky composition.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Add Sprunki Magic</h3>
+                    <p>Enhance your mix with wild effects and transitions.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Share Your Sprunki</h3>
+                    <p>Show off your creation to the Sprunki community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sprunki-history">
+        <div class="container">
+            <h2>The Sprunky Saga: How Sprunki Incredibox Came to Be</h2>
+            <p>The tale of Sprunki Incredibox is as wild and wonderful as the beats it helps create. It all started when a group of music-loving mad scientists decided that the world of digital music creation needed a dose of sprunky chaos. Inspired by the success of Incredibox, they set out to create something even more outrageous.</p>
+            <p>After months of mixing musical potions and conducting experiments with sound waves, Sprunki Incredibox was born. The team infused each character with a unique sprunky personality, ensuring that every beat created with Sprunki would be a one-of-a-kind auditory adventure.</p>
+            <p>Since its launch, Sprunki Incredibox has taken the music creation world by storm, attracting sprunky souls from all corners of the globe. Today, it stands as a testament to the power of thinking outside the box – or should we say, thinking "sprunki-ly"!</p>
+        </div>
+    </section>
+
+    <section id="play-now" class="play-area">
+        <div class="container">
+            <h2>Play Sprunki Incredibox Now</h2>
+            <div class="game-container">
+                <iframe src="https://html-classic.itch.zone/html/11407110/index.html" frameborder="0" width="100%" height="600px"></iframe>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="community" id="community">
+        <div class="container">
+            <h2>Sprunki Community Vibes</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Sprunki Incredibox is like nothing I've ever played before. It's addictively fun and wildly creative!"</p>
+                    <p class="author">- SprunkyBeats101</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The Sprunki characters are hilarious! I can't stop mixing beats with these quirky little guys."</p>
+                    <p class="author">- MelodyMaker22</p>
+                </div>
+                <div class="testimonial">
+                    <p>"As a music teacher, I love using Sprunki Incredibox to introduce my students to rhythm and composition. It's educational and tons of fun!"</p>
+                    <p class="author">- Harmonious_Educator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sprunki-modes" id="modes">
+        <div class="container">
+            <h2>Sprunki Modes: Choose Your Sprunky Adventure</h2>
+            <p style="margin-bottom: 15px;">Sprunki Incredibox offers a variety of modes to keep your sprunky creativity flowing. Each mode presents a unique theme and set of characters, ensuring that your Sprunki experience is always fresh and exciting.</p>
+            <div class="mode-grid">
+                <div class="mode-item">
+                    <h3>Sprunki Classic</h3>
+                    <p>The original Sprunki experience, featuring our core cast of sprunky characters and sounds.</p>
+                </div>
+                <div class="mode-item">
+                    <h3>Sprunki Disco Fever</h3>
+                    <p>Get groovy with disco-inspired Sprunki beats and funky fresh characters.</p>
+                </div>
+                <div class="mode-item">
+                    <h3>Sprunki Space Odyssey</h3>
+                    <p>Blast off into a galaxy of cosmic sounds and alien Sprunki beings.</p>
+                </div>
+                <div class="mode-item">
+                    <h3>Sprunki Time Warp</h3>
+                    <p>Travel through musical eras with historically-inspired Sprunki characters and beats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sprunki-tips">
+        <div class="container">
+            <h2>Sprunki Pro Tips: Elevate Your Sprunky Beats</h2>
+            <ul class="tip-list">
+                <li><strong>Mix it Up:</strong> Don't be afraid to combine unexpected Sprunki sounds. The quirkier, the better!</li>
+                <li><strong>Rhythm is Key:</strong> Even in the sprunky world of Sprunki Incredibox, a solid rhythm foundation will make your beats shine.</li>
+                <li><strong>Explore All Modes:</strong> Each Sprunki mode offers unique sounds and characters. Try them all to expand your sprunky repertoire.</li>
+                <li><strong>Listen and Adjust:</strong> Use the solo function to listen to individual Sprunki elements and fine-tune your mix.</li>
+                <li><strong>Share Your Sprunki:</strong> The Sprunki community loves hearing new creations. Don't be shy – share your sprunky masterpieces!</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Sprunki Questions</h2>
+            <div class="faq-item">
+                <p class="faq-question">Q: What makes Sprunki Incredibox different from regular Incredibox?</p>
+                <p>A: Sprunki Incredibox takes the core concept of Incredibox and injects it with an extra dose of quirkiness and creativity. With Sprunki, you'll find more outrageous characters, zanier sounds, and an overall more sprunky experience!</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Do I need musical experience to enjoy Sprunki Incredibox?</p>
+                <p>A: Not at all! Sprunki Incredibox is designed for everyone, from musical novices to seasoned pros. Its intuitive interface makes it easy for anyone to start creating sprunky beats in no time.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I use my Sprunki Incredibox creations in my own projects?</p>
+                <p>A: Absolutely! We encourage Sprunki users to let their creativity run wild. Feel free to use your Sprunki beats in personal projects. For commercial use, please check our licensing terms.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How often does Sprunki Incredibox update with new content?</p>
+                <p>A: We're constantly working on new sprunky surprises! We typically release new Sprunki characters, sounds, and modes every few months. Keep an eye on our updates to catch all the latest Sprunki goodness!</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is Sprunki Incredibox available on mobile devices?</p>
+                <p>A: Yes! Sprunki Incredibox is available on both iOS and Android devices. You can download the app from the App Store or Google Play Store to enjoy sprunky beat-making on the go.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I collaborate with other Sprunki users?</p>
+                <p>A: While direct real-time collaboration isn't currently a feature, you can share your Sprunki creations with the community. Other users can then remix your beats, creating a fun, indirect collaboration!</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Are there different difficulty levels in Sprunki Incredibox?</p>
+                <p>A: Sprunki Incredibox is designed to be accessible to all, but as you explore more complex beat combinations and unlock special features, you'll find the experience naturally becomes more challenging and rewarding.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I export my Sprunki creations as audio files?</p>
+                <p>A: Yes! Sprunki Incredibox allows you to export your beats as high-quality audio files. This feature is great for sharing your creations outside the app or using them in other projects.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is there a limit to how many Sprunki characters I can use in one composition?</p>
+                <p>A: Each Sprunki mode has a set number of character slots available. While this creates a fun challenge, it also ensures that your beats remain balanced and don't become too chaotic (unless that's what you're going for, of course!).</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Are there any hidden features or Easter eggs in Sprunki Incredibox?</p>
+                <p>A: Oh, absolutely! We love hiding little surprises throughout Sprunki Incredibox. Keep experimenting with different combinations and you might unlock some truly wild and wacky secret features!</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I use Sprunki Incredibox offline?</p>
+                <p>A: Yes, once you've downloaded the Sprunki Incredibox app, you can create and play with your beats offline. However, you'll need an internet connection to share your creations or access new updates.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is Sprunki Incredibox suitable for children?</p>
+                <p>A: Absolutely! Sprunki Incredibox is fun for all ages. It's a great tool for introducing children to rhythm, composition, and the joy of music creation in a playful, engaging way.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I suggest new ideas for Sprunki characters or sounds?</p>
+                <p>A: We love hearing from our Sprunki community! While we can't promise to implement every idea, we always appreciate suggestions. Feel free to reach out to us through our contact page with your sprunky ideas.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is there a Sprunki Incredibox community I can join?</p>
+                <p>A: Yes indeed! We have a vibrant community of Sprunki enthusiasts. Join our forums, follow us on social media, and participate in our regular beat-making challenges to connect with fellow Sprunki lovers.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How did Sprunki Incredibox get its name?</p>
+                <p>A: The name "Sprunki" comes from combining "spunky" and "funky" - two words that perfectly capture the essence of our quirky, energetic take on Incredibox. It's all about bringing that extra spark of fun to beat-making!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sprunki-call-to-action">
+        <div class="container">
+            <h2>Ready to Get Sprunki?</h2>
+            <p>The world of Sprunki Incredibox is waiting for you! Dive in and start creating your own sprunky beats today. Whether you're a musical maestro or a curious beginner, Sprunki has something for everyone. Join our community of sprunky creators and let your imagination run wild!</p>
+            <p style="text-align: center;margin-top: 30px;">
+                <a href="#play-now" class="cta-button">Start Your Sprunki Adventure Now!</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        </div>
+    </footer>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        navSlide();
+    </script>
+</body>
+</html>
