@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>视觉优化的语音控制Flappy Bird</title>
+    <title>优化后的语音控制Flappy Bird</title>
     <style>
         body { margin: 0; overflow: hidden; }
         #container { position: relative; width: 100vw; height: 100vh; }
@@ -18,7 +18,7 @@
 <body>
     <div id="container">
         <video id="webcamVideo" autoplay muted></video>
-        <div id="gameCanvas"></div>
+        <canvas id="gameCanvas"></canvas>
         <canvas id="mergedCanvas"></canvas>
         <div id="uiLayer">
             <button id="startButton">开始游戏</button>
@@ -41,8 +41,11 @@
         let debugElement;
         let mergedCanvas;
         let mergedCtx;
+        let gameCanvas;
+        let gameCtx;
+        let videoAspectRatio;
 
-        const VOLUME_THRESHOLD = 0.01;
+        const VOLUME_THRESHOLD = 0.0001;
         const FIXED_LIFT = -3;
         const PIPE_SPAWN_INTERVAL = 250;
         const MIN_PIPE_SPACING = 250;
@@ -53,15 +56,12 @@
         let lastFlapTime = 0;
 
         function setup() {
-            let canvas = createCanvas(windowWidth, windowHeight);
-            canvas.parent('gameCanvas');
-            bird = new Bird();
+            gameCanvas = document.getElementById('gameCanvas');
+            gameCtx = gameCanvas.getContext('2d');
             
             debugElement = document.getElementById('debugInfo');
 
             mergedCanvas = document.getElementById('mergedCanvas');
-            mergedCanvas.width = windowWidth;
-            mergedCanvas.height = windowHeight;
             mergedCtx = mergedCanvas.getContext('2d');
 
             mic = new p5.AudioIn();
@@ -84,15 +84,17 @@
                     videoElement.srcObject = stream;
                     videoElement.onloadedmetadata = () => {
                         videoElement.play();
-                    };
+                        videoAspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+                        resizeCanvases();
 
-                    let mergedStream = mergedCanvas.captureStream(30);
-                    let audioTrack = stream.getAudioTracks()[0];
-                    mergedStream.addTrack(audioTrack);
-                    
-                    recorder = new MediaRecorder(mergedStream, { mimeType: 'video/webm; codecs=vp9' });
-                    recorder.ondataavailable = e => chunks.push(e.data);
-                    recorder.onstop = saveVideo;
+                        let mergedStream = mergedCanvas.captureStream(30);
+                        let audioTrack = stream.getAudioTracks()[0];
+                        mergedStream.addTrack(audioTrack);
+                        
+                        recorder = new MediaRecorder(mergedStream, { mimeType: 'video/webm; codecs=vp9' });
+                        recorder.ondataavailable = e => chunks.push(e.data);
+                        recorder.onstop = saveVideo;
+                    };
 
                     console.log('摄像头和麦克风权限已获得');
                     updateDebugInfo('摄像头和麦克风权限已获得');
@@ -103,10 +105,37 @@
                 });
 
             document.getElementById('startButton').addEventListener('click', startGame);
+            
+            noCanvas(); // 移除 p5.js 创建的默认画布
+        }
+
+        function resizeCanvases() {
+            let containerWidth = windowWidth;
+            let containerHeight = windowHeight;
+            let canvasWidth, canvasHeight;
+
+            if (containerWidth / containerHeight > videoAspectRatio) {
+                canvasWidth = containerHeight * videoAspectRatio;
+                canvasHeight = containerHeight;
+            } else {
+                canvasWidth = containerWidth;
+                canvasHeight = containerWidth / videoAspectRatio;
+            }
+
+            gameCanvas.width = canvasWidth;
+            gameCanvas.height = canvasHeight;
+            mergedCanvas.width = canvasWidth;
+            mergedCanvas.height = canvasHeight;
+
+            let videoElement = document.getElementById('webcamVideo');
+            videoElement.style.width = canvasWidth + 'px';
+            videoElement.style.height = canvasHeight + 'px';
+
+            bird = new Bird();
         }
 
         function draw() {
-            clear();
+            gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
 
             if (gameStarted && !gameOver) {
                 let vol = mic.getLevel();
@@ -142,67 +171,80 @@
                     }
                 }
 
-                textAlign(LEFT);
-                textSize(32);
-                fill(255);
-                text('分数: ' + score, 10, 40);
+                gameCtx.fillStyle = 'white';
+                gameCtx.font = '32px Arial';
+                gameCtx.textAlign = 'left';
+                gameCtx.fillText('分数: ' + score, 10, 40);
             } else if (gameOver) {
-                textAlign(CENTER);
-                textSize(32);
-                fill(255);
-                text('游戏结束!点击重新开始', width/2, height/2);
+                gameCtx.fillStyle = 'white';
+                gameCtx.font = '32px Arial';
+                gameCtx.textAlign = 'center';
+                gameCtx.fillText('游戏结束!点击重新开始', gameCanvas.width/2, gameCanvas.height/2);
                 noLoop();
                 recorder.stop();
             } else {
-                textAlign(CENTER);
-                textSize(32);
-                fill(255);
-                text('准备开始', width/2, height/2 - 50);
+                gameCtx.fillStyle = 'white';
+                gameCtx.font = '32px Arial';
+                gameCtx.textAlign = 'center';
+                gameCtx.fillText('准备开始', gameCanvas.width/2, gameCanvas.height/2 - 50);
             }
 
             mergeFrames();
         }
 
         function Bird() {
-            this.y = height / 2;
-            this.x = width / 2;
+            this.y = gameCanvas.height / 2;
+            this.x = gameCanvas.width / 2;
             this.gravity = 0.1;
             this.velocity = 0;
             this.size = 32;
 
             this.show = function() {
-                push();
-                translate(this.x, this.y);
-                rotate(this.velocity * 0.1);
+                gameCtx.save();
+                gameCtx.translate(this.x, this.y);
+                gameCtx.rotate(this.velocity * 0.1);
 
                 // 身体
-                fill(255, 255, 0);
-                ellipse(0, 0, this.size, this.size * 0.8);
+                gameCtx.fillStyle = 'rgb(255, 255, 0)';
+                gameCtx.beginPath();
+                gameCtx.ellipse(0, 0, this.size/2, this.size*0.4, 0, 0, 2*Math.PI);
+                gameCtx.fill();
 
                 // 眼睛
-                fill(255);
-                ellipse(this.size * 0.2, -this.size * 0.1, this.size * 0.2, this.size * 0.2);
-                fill(0);
-                ellipse(this.size * 0.2, -this.size * 0.1, this.size * 0.1, this.size * 0.1);
+                gameCtx.fillStyle = 'white';
+                gameCtx.beginPath();
+                gameCtx.ellipse(this.size * 0.2, -this.size * 0.1, this.size * 0.1, this.size * 0.1, 0, 0, 2*Math.PI);
+                gameCtx.fill();
+                gameCtx.fillStyle = 'black';
+                gameCtx.beginPath();
+                gameCtx.ellipse(this.size * 0.2, -this.size * 0.1, this.size * 0.05, this.size * 0.05, 0, 0, 2*Math.PI);
+                gameCtx.fill();
 
                 // 嘴巴
-                fill(255, 150, 0);
-                triangle(this.size * 0.3, 0, this.size * 0.5, -this.size * 0.1, this.size * 0.5, this.size * 0.1);
+                gameCtx.fillStyle = 'rgb(255, 150, 0)';
+                gameCtx.beginPath();
+                gameCtx.moveTo(this.size * 0.3, 0);
+                gameCtx.lineTo(this.size * 0.5, -this.size * 0.1);
+                gameCtx.lineTo(this.size * 0.5, this.size * 0.1);
+                gameCtx.closePath();
+                gameCtx.fill();
 
                 // 翅膀
-                fill(255, 200, 0);
-                ellipse(-this.size * 0.2, 0, this.size * 0.4, this.size * 0.2);
+                gameCtx.fillStyle = 'rgb(255, 200, 0)';
+                gameCtx.beginPath();
+                gameCtx.ellipse(-this.size * 0.2, 0, this.size * 0.2, this.size * 0.1, 0, 0, 2*Math.PI);
+                gameCtx.fill();
 
-                pop();
+                gameCtx.restore();
             }
 
             this.update = function() {
                 this.velocity += this.gravity;
-                this.velocity = constrain(this.velocity, -MAX_FALL_SPEED, MAX_FALL_SPEED);
+                this.velocity = Math.min(Math.max(this.velocity, -MAX_FALL_SPEED), MAX_FALL_SPEED);
                 this.y += this.velocity;
 
-                if (this.y > height - this.size/2) {
-                    this.y = height - this.size/2;
+                if (this.y > gameCanvas.height - this.size/2) {
+                    this.y = gameCanvas.height - this.size/2;
                     this.velocity = 0;
                 }
 
@@ -219,28 +261,33 @@
 
         function Pipe() {
             this.spacing = random(MIN_PIPE_SPACING, MAX_PIPE_SPACING);
-            this.top = random(height * 0.1, height * 0.6);
-            this.bottom = height - (this.top + this.spacing);
-            this.x = width;
+            this.top = random(gameCanvas.height * 0.1, gameCanvas.height * 0.6);
+            this.bottom = gameCanvas.height - (this.top + this.spacing);
+            this.x = gameCanvas.width;
             this.w = 80;
             this.speed = 1.5;
 
             this.show = function() {
                 // 主体
-                fill(0, 200, 0);
-                rect(this.x, 0, this.w, this.top);
-                rect(this.x, height - this.bottom, this.w, this.bottom);
+                gameCtx.fillStyle = 'rgb(0, 200, 0)';
+                gameCtx.fillRect(this.x, 0, this.w, this.top);
+                gameCtx.fillRect(this.x, gameCanvas.height - this.bottom, this.w, this.bottom);
 
                 // 顶部装饰
-                fill(0, 150, 0);
-                rect(this.x - 5, this.top - 20, this.w + 10, 20);
-                rect(this.x - 5, height - this.bottom, this.w + 10, 20);
+                gameCtx.fillStyle = 'rgb(0, 150, 0)';
+                gameCtx.fillRect(this.x - 5, this.top - 20, this.w + 10, 20);
+                gameCtx.fillRect(this.x - 5, gameCanvas.height - this.bottom, this.w + 10, 20);
 
                 // 高光效果
-                stroke(255, 255, 255, 100);
-                line(this.x, 0, this.x, this.top);
-                line(this.x, height - this.bottom, this.x, height);
-                noStroke();
+                gameCtx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+                gameCtx.beginPath();
+                gameCtx.moveTo(this.x, 0);
+                gameCtx.lineTo(this.x, this.top);
+                gameCtx.stroke();
+                gameCtx.beginPath();
+                gameCtx.moveTo(this.x, gameCanvas.height - this.bottom);
+                gameCtx.lineTo(this.x, gameCanvas.height);
+                gameCtx.stroke();
             }
 
             this.update = function() {
@@ -252,7 +299,7 @@
             }
 
             this.hits = function(bird) {
-                if (bird.y < this.top || bird.y > height - this.bottom) {
+                if (bird.y < this.top || bird.y > gameCanvas.height - this.bottom) {
                     if (bird.x > this.x && bird.x < this.x + this.w) {
                         return true;
                     }
@@ -262,8 +309,9 @@
         }
 
         function mergeFrames() {
-            mergedCtx.drawImage(document.getElementById('webcamVideo'), 0, 0, mergedCanvas.width, mergedCanvas.height);
-            mergedCtx.drawImage(document.getElementById('defaultCanvas0'), 0, 0);
+            let videoElement = document.getElementById('webcamVideo');
+            mergedCtx.drawImage(videoElement, 0, 0, mergedCanvas.width, mergedCanvas.height);
+            mergedCtx.drawImage(gameCanvas, 0, 0);
         }
 
         function startGame() {
@@ -312,10 +360,26 @@
         }
 
         function windowResized() {
-            resizeCanvas(windowWidth, windowHeight);
-            mergedCanvas.width = windowWidth;
-            mergedCanvas.height = windowHeight;
+            resizeCanvases();
         }
+
+        // 添加事件监听器以处理窗口大小变化
+        window.addEventListener('resize', windowResized);
+
+        // 初始化 p5.js
+        new p5();
+
+        // 开始游戏循环
+        function gameLoop() {
+            requestAnimationFrame(gameLoop);
+            draw();
+        }
+
+        // 在设置完成后启动游戏循环
+        document.addEventListener('DOMContentLoaded', function() {
+            setup();
+            gameLoop();
+        });
     </script>
 </body>
 </html>
