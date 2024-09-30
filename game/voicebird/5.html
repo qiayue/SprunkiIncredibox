@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定上升力的语音控制Flappy Bird</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #container { position: relative; width: 100vw; height: 100vh; }
+        #webcamVideo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        #gameCanvas { position: absolute; top: 0; left: 0; z-index: 2; }
+        #mergedCanvas { display: none; }
+        #uiLayer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; }
+        #startButton { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 4; pointer-events: auto; }
+        #debugInfo { position: absolute; bottom: 10px; left: 10px; color: white; font-family: Arial, sans-serif; z-index: 5; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <video id="webcamVideo" autoplay muted></video>
+        <div id="gameCanvas"></div>
+        <canvas id="mergedCanvas"></canvas>
+        <div id="uiLayer">
+            <button id="startButton">开始游戏</button>
+        </div>
+        <div id="debugInfo"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+
+    <script>
+        let bird;
+        let pipes = [];
+        let score = 0;
+        let gameOver = false;
+        let gameStarted = false;
+        let mic;
+        let recorder;
+        let chunks = [];
+        let debugElement;
+        let mergedCanvas;
+        let mergedCtx;
+
+        const VOLUME_THRESHOLD = 0.01; // 声音触发阈值
+        const FIXED_LIFT = -2; // 固定上升力
+        const PIPE_SPAWN_INTERVAL = 180;
+        const MIN_PIPE_SPACING = 200;
+        const MAX_PIPE_SPACING = 300;
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('gameCanvas');
+            bird = new Bird();
+            
+            debugElement = document.getElementById('debugInfo');
+
+            mergedCanvas = document.getElementById('mergedCanvas');
+            mergedCanvas.width = windowWidth;
+            mergedCanvas.height = windowHeight;
+            mergedCtx = mergedCanvas.getContext('2d');
+
+            mic = new p5.AudioIn();
+            mic.start(function() {
+                console.log('麦克风已启动');
+                updateDebugInfo('麦克风已启动');
+            }, function(err) {
+                console.error('麦克风启动失败:', err);
+                updateDebugInfo('麦克风启动失败: ' + err);
+            });
+
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+                .then(stream => {
+                    let videoElement = document.getElementById('webcamVideo');
+                    videoElement.srcObject = stream;
+                    videoElement.onloadedmetadata = () => {
+                        videoElement.play();
+                    };
+
+                    let mergedStream = mergedCanvas.captureStream(30);
+                    let audioTrack = stream.getAudioTracks()[0];
+                    mergedStream.addTrack(audioTrack);
+                    
+                    recorder = new MediaRecorder(mergedStream);
+                    recorder.ondataavailable = e => chunks.push(e.data);
+                    recorder.onstop = saveVideo;
+
+                    console.log('摄像头和麦克风权限已获得');
+                    updateDebugInfo('摄像头和麦克风权限已获得');
+                })
+                .catch(err => {
+                    console.error("无法访问摄像头或麦克风:", err);
+                    updateDebugInfo("无法访问摄像头或麦克风: " + err);
+                });
+
+            document.getElementById('startButton').addEventListener('click', startGame);
+        }
+
+        function draw() {
+            clear();
+
+            if (gameStarted && !gameOver) {
+                let vol = mic.getLevel();
+                updateDebugInfo('音量: ' + vol.toFixed(4) + ', 阈值: ' + VOLUME_THRESHOLD);
+
+                if (vol > VOLUME_THRESHOLD) {
+                    bird.flap();
+                    updateDebugInfo('音量: ' + vol.toFixed(4) + ', 上升力: ' + FIXED_LIFT);
+                }
+
+                bird.update();
+                bird.show();
+
+                if (frameCount % PIPE_SPAWN_INTERVAL == 0) {
+                    pipes.push(new Pipe());
+                }
+
+                for (let i = pipes.length - 1; i >= 0; i--) {
+                    pipes[i].show();
+                    pipes[i].update();
+
+                    if (pipes[i].hits(bird)) {
+                        gameOver = true;
+                    }
+
+                    if (pipes[i].offscreen()) {
+                        pipes.splice(i, 1);
+                        score++;
+                    }
+                }
+
+                textAlign(LEFT);
+                textSize(32);
+                fill(255);
+                text('分数: ' + score, 10, 40);
+            } else if (gameOver) {
+                textAlign(CENTER);
+                textSize(32);
+                fill(255);
+                text('游戏结束!点击重新开始', width/2, height/2);
+                noLoop();
+                recorder.stop();
+            } else {
+                textAlign(CENTER);
+                textSize(32);
+                fill(255);
+                text('准备开始', width/2, height/2 - 50);
+            }
+
+            mergeFrames();
+        }
+
+        function Bird() {
+            this.y = height - 50;
+            this.x = 64;
+            this.gravity = 0.6;
+            this.velocity = 0;
+
+            this.show = function() {
+                fill(255, 255, 0);
+                ellipse(this.x, this.y, 32, 32);
+            }
+
+            this.update = function() {
+                this.velocity += this.gravity;
+                this.y += this.velocity;
+
+                if (this.y > height - 16) {
+                    this.y = height - 16;
+                    this.velocity = 0;
+                }
+
+                if (this.y < 16) {
+                    this.y = 16;
+                    this.velocity = 0;
+                }
+            }
+
+            this.flap = function() {
+                this.velocity += FIXED_LIFT; // 累加固定的上升力
+            }
+        }
+
+        function Pipe() {
+            this.spacing = random(MIN_PIPE_SPACING, MAX_PIPE_SPACING);
+            this.top = random(height * 0.1, height * 0.6);
+            this.bottom = height - (this.top + this.spacing);
+            this.x = width;
+            this.w = 80;
+            this.speed = 2;
+
+            this.show = function() {
+                fill(0, 255, 0);
+                rect(this.x, 0, this.w, this.top);
+                rect(this.x, height - this.bottom, this.w, this.bottom);
+            }
+
+            this.update = function() {
+                this.x -= this.speed;
+            }
+
+            this.offscreen = function() {
+                return (this.x < -this.w);
+            }
+
+            this.hits = function(bird) {
+                if (bird.y < this.top || bird.y > height - this.bottom) {
+                    if (bird.x > this.x && bird.x < this.x + this.w) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        function mergeFrames() {
+            mergedCtx.drawImage(document.getElementById('webcamVideo'), 0, 0, mergedCanvas.width, mergedCanvas.height);
+            mergedCtx.drawImage(document.getElementById('defaultCanvas0'), 0, 0);
+        }
+
+        function startGame() {
+            gameStarted = true;
+            document.getElementById('startButton').style.display = 'none';
+            pipes = [];
+            score = 0;
+            bird = new Bird();
+            recorder.start();
+            getAudioContext().resume().then(() => {
+                console.log('音频上下文已恢复');
+                updateDebugInfo('音频上下文已恢复');
+            });
+            loop();
+        }
+
+        function updateDebugInfo(info) {
+            debugElement.textContent = info;
+        }
+
+        function mousePressed() {
+            if (gameOver) {
+                gameOver = false;
+                gameStarted = false;
+                bird = new Bird();
+                pipes = [];
+                score = 0;
+                document.getElementById('startButton').style.display = 'block';
+                loop();
+                chunks = [];
+            }
+        }
+
+        function saveVideo() {
+            const blob = new Blob(chunks, { type: 'video/webm' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.style = 'display: none';
+            a.href = url;
+            a.download = 'game-recording.webm';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            mergedCanvas.width = windowWidth;
+            mergedCanvas.height = windowHeight;
+        }
+    </script>
+</body>
+</html>
