@@ -346,3 +346,27 @@ nav {
         margin-bottom: 10px;
     }
 }
+
+/* Copie os estilos da página principal e adicione os seguintes */
+.play-online {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+.play-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.play-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
