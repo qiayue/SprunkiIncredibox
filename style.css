@@ -3,7 +3,7 @@
     --secondary-color: #f39c12;
     --text-color: #333;
     --background-color: #f4f4f4;
-    --section-padding: 80px 0;
+    --section-padding: 40px 0; /* 减少在移动设备上的内边距 */
 }
 * {
     margin: 0;
@@ -12,14 +12,15 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text-color);
     background-color: var(--background-color);
+    font-size: 16px; /* 基础字体大小 */
 }
 .container {
-    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 header {
     background-color: var(--primary-color);
@@ -29,7 +30,8 @@ header {
 }
 .hero {
     background: url('https://s.sprunkiincredibox.com/img/bg01.png') no-repeat center center/cover;
-    height: 60vh;
+    height: auto;
+    padding: 60px 0;
     display: flex;
     align-items: center;
     text-align: center;
@@ -51,12 +53,12 @@ header {
     position: relative;
 }
 .hero h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 .cta-button {
@@ -69,6 +71,8 @@ header {
     font-size: 1.2rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%; /* 让按钮占满整行 */
+    text-align: center;
 }
 .cta-button:hover {
     background-color: #e67e22;
@@ -86,8 +90,8 @@ section h2 {
 }
 .feature-grid, .step-grid, .mode-grid, .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr; /* 在移动设备上使用单列布局 */
+    gap: 20px;
 }
 .feature-item, .step-item, .mode-item, .testimonial {
     background-color: white;
@@ -106,13 +110,14 @@ section h2 {
     margin-bottom: 20px;
 }
 .step-number {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
     height: 60px;
     background-color: var(--primary-color);
     color: white;
     border-radius: 50%;
-    line-height: 60px;
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -205,9 +210,7 @@ nav {
 }
 
 .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
+    display: none; /* 默认隐藏导航链接 */
 }
 
 .nav-links li {
@@ -228,7 +231,7 @@ nav {
 }
 
 .burger {
-    display: none;
+    display: block; /* 显示汉堡菜单图标 */
     cursor: pointer;
 }
 
@@ -414,4 +417,236 @@ nav {
     padding: 0 15px 15px;
     font-size: 0.9em;
     color: #666;
+}
+
+/* 响应式排版 */
+h1 {
+    font-size: 2rem; /* 在移动设备上使用较小的字体大小 */
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* 导航栏调整 */
+.nav-links {
+    display: none; /* 默认隐藏导航链接 */
+}
+
+.burger {
+    display: block; /* 显示汉堡菜单图标 */
+}
+
+/* 当导航栏激活时显示链接 */
+.nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px 0;
+}
+
+.nav-active li {
+    margin: 10px 0;
+}
+
+/* 英雄区域调整 */
+.hero {
+    height: auto;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* 网格布局调整 */
+.feature-grid, .step-grid, .mode-grid, .testimonial-grid, .game-card-grid {
+    grid-template-columns: 1fr; /* 在移动设备上使用单列布局 */
+    gap: 20px;
+}
+
+/* 按钮样式调整 */
+.cta-button, .play-button {
+    width: 100%; /* 让按钮占满整行 */
+    text-align: center;
+    padding: 15px;
+}
+
+/* 图片响应式处理 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 媒体查询 */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .feature-grid, .step-grid, .mode-grid, .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-button, .play-button {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1140px;
+        padding: 0 30px;
+    }
+
+    /* 导航栏优化 */
+    .nav-links {
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        transform: none;
+    }
+
+    .nav-links li {
+        opacity: 1;
+        margin-left: 20px;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    /* 英雄区域优化 */
+    .hero {
+        /* height: 80vh; */
+        padding: 100px 0;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    /* 网格布局优化 */
+    .feature-grid, .step-grid, .mode-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .game-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* 按钮样式优化 */
+    .cta-button, .play-button {
+        width: auto;
+        padding: 15px 40px;
+    }
+
+    /* 内容区域优化 */
+    section {
+        padding: 80px 0;
+    }
+
+    section h2 {
+        font-size: 3rem;
+        margin-bottom: 60px;
+    }
+
+    /* FAQ 部分优化 */
+    .faq-item {
+        padding: 30px;
+    }
+
+    /* 语言选择器优化 */
+    .language-selector {
+        flex-direction: row;
+    }
+
+    .language-selector ul {
+        margin-left: 20px;
+    }
+}
+
+/* 额外的大屏幕优化 */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 1.8rem;
+    }
+}
+
+/* 确保内容不会过宽 */
+.container {
+    max-width: 100%;
+}
+
+/* 优化图片显示 */
+.game-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 优化间距 */
+.feature-item, .step-item, .mode-item, .testimonial {
+    padding: 30px;
+}
+
+/* 改善可读性 */
+body {
+    line-height: 1.6;
+}
+
+p {
+    margin-bottom: 1em;
 }
