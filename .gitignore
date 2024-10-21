@@ -1,0 +1,27 @@
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 编辑器和IDE生成的文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 依赖目录
+node_modules/
+vendor/
+
+# 编译输出
+dist/
+build/
+
+# 日志文件
+*.log
+
+# 环境变量文件
+.env
+
+# 临时文件
+*.tmp
+
