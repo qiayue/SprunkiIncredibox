@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Sprunki Incredibox Online for Free – Create Music Instantly</title>
+    <meta name="description" content="Play Sprunki Incredibox online free. Create unique music tracks with characters and sounds directly in your browser.">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://s.sprunkiincredibox.com/img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://s.sprunkiincredibox.com/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://s.sprunkiincredibox.com/img/icon/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://sprunkiincredibox.com/play"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../tailwind.js"></script>
+    <link rel="stylesheet" href="../style.css?v=09301430">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
+     crossorigin="anonymous"></script>
+    <style type="text/css">
+        .related-games {
+            background-color: #f5f5f5;
+            padding: 50px 0;
+        }
+
+        .game-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .game-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .game-card h3 {
+            padding: 15px 15px 5px;
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .game-card p {
+            padding: 0 15px 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .game-container {
+            position: relative;
+        }
+        
+        .fullscreen-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .fullscreen-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .fullscreen-button i {
+            margin-right: 5px;
+        }
+
+        .exit-fullscreen-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 10000;
+            display: none;
+        }
+        
+        .exit-fullscreen-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .domain{
+            position: absolute;
+            display: block;
+            transform: rotate(90deg) translateY(-200%);
+            top: 50%;
+            right: 0%;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../" class="flex center items-center"><i class="fas mr-2 fa-music hidden sm:block"></i> Sprunki Incredibox
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#play-now" title="Play Sprunki"><i class="fas fa-play"></i> Sprunki</a></li>
+                    <li><a href="../download/"><i class="fas fa-download"></i> Download</a></li>
+                    <li><a href="../neesterversal-v3-incredibox/" title="Play Neesterversal"><i class="fas fa-play"></i> Neesterversal V3</a></li>
+                    <li><a href="../gray-sprunki/" title="Play Gray Sprunki"><i class="fas fa-play"></i> Gray Sprunki</a></li>
+                    <li><a href="../sprunki-oc/" title="Play Sprunki OC"><i class="fas fa-play"></i> Sprunki OC</a></li>
+                    <li><a href="../sprunki-characters/" title="Sprunki Characters"><i class="fas fa-users"></i> Characters</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id="play-now" class="play-area mt-10">
+        <div class="container">
+            <div class="game-container">
+                <iframe id="game-iframe" src="https://s.sprunkiincredibox.com/game/sprunki/index.html" frameborder="0" width="100%" height="800px"></iframe>
+                <button id="fullscreen-btn" class="fullscreen-button">
+                    <i class="fas fa-expand"></i> Fullscreen
+                </button>
+                <button id="exit-fullscreen-btn" class="exit-fullscreen-button">
+                    <i class="fas fa-compress"></i> Exit
+                </button>
+                <a href="https://sprunkiincredibox.com/" class="domain" id="domain-watermark" style="display: none;">SprunkiIncredibox.com</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero mt-[70px] ">
+        <div class="hero-content container">
+            <h1>Play Sprunki Incredibox Online – Your Free Music-Mixing Experience!</h1>
+            <h2 style="color:white;">Welcome to Play Sprunki Incredibox Online – Create Your Own Sprunki Beats!</h2>
+            <p>Create, mix, and groove with the spunkiest beats around!</p>
+            <a href="#play-now" class="cta-button"><i class="fas fa-play"></i> Play Sprunki Now</a>
+        </div>
+    </section>
+
+    <section class="about-sprunki" id="about">
+        <div class="container">
+            <h2>Introduction: What is Sprunki Incredibox?</h2>
+            <p>Sprunki Incredibox is a fan-made mod of the original Incredibox game, where players create their own unique music by mixing and matching beats, effects, melodies, and vocals. By using animated characters, each with their own distinct sounds, you can drag and drop these elements to craft custom compositions. What makes Sprunki Incredibox stand out is its fresh set of characters and sounds created by the community, allowing for endless creative combinations. And the best part? You can Play Sprunki Incredibox Online for free, anytime, directly through your web browser!</p>
+        </div>
+    </section>
+
+    <section id="related-games" class="related-games">
+        <div class="container">
+            <h2>Explore More Musical Adventures</h2>
+            <div class="game-card-grid">
+                <a href="../neesterversal-v3-incredibox/" class="game-card">
+                    <img src="https://s.sprunkiincredibox.com/img/neesterversal.png" alt="Neesterversal v3 Incredibox">
+                    <h3>Neesterversal v3 Incredibox</h3>
+                    <p>A Musical Journey with 20 Unique Neesters!</p>
+                </a>
+                <a href="../gray-sprunki/" class="game-card">
+                    <img src="https://s.sprunkiincredibox.com/img/gray-sprunki.png" alt="Gray Sprunki Incredibox">
+                    <h3>Gray Sprunki Incredibox</h3>
+                    <p>The Cool Cat of Incredibox Universe</p>
+                </a>
+                <a href="../sprunki-oc/" class="game-card">
+                    <img src="../img/sprunki-oc.png" alt="Sprunki OC">
+                    <h3>Sprunki OC</h3>
+                    <p>Create music with original characters!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Play Sprunki Incredibox Online?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Unleash Your Creativity</h3>
+                    <p>Sprunki Incredibox is the perfect playground for anyone interested in music. You don't need to be a professional musician to enjoy creating tracks that sound amazing. The intuitive interface makes it easy to start mixing sounds within minutes.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Completely Free</h3>
+                    <p>No need to worry about in-game purchases or subscriptions. You can Play Sprunki Incredibox Online free—all you need is an internet connection and your browser. Simply visit the website and start creating music instantly!</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Fan-Driven Content</h3>
+                    <p>Unlike other music games, Sprunki Incredibox is constantly evolving, thanks to the creativity of its dedicated fanbase. The game's characters and sounds are crafted by the community, which means you'll always find something new and exciting to work with.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Fun for All Ages</h3>
+                    <p>Whether you're a kid or an adult, Sprunki Incredibox offers a fun, engaging way to explore music. It's easy to learn but offers enough depth to keep you entertained for hours as you experiment with different sound combinations.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Social and Shareable</h3>
+                    <p>Once you've crafted the perfect mix, you can easily share your creation with friends. Whether it's on social media or directly within the Incredibox community, there's always an audience ready to appreciate your musical talent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-to">
+        <div class="container">
+            <h2>How to Play Sprunki Incredibox Online</h2>
+            <div class="step-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Visit the Website</h3>
+                    <p>To Play Sprunki Incredibox Online, simply go to the official website. You don't need to download anything, and it works seamlessly in your browser.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Choose Your Characters</h3>
+                    <p>Select from a lineup of Sprunki characters, each representing different sound elements like beats, effects, melodies, and vocals. These characters are what make the game so engaging—they bring the sound to life!</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Drag and Drop</h3>
+                    <p>Once you've selected your characters, drag and drop them into the sound slots. Each character adds a new layer to your track, and by mixing different combinations, you can create truly unique music.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Unlock Bonuses</h3>
+                    <p>Sprunki Incredibox rewards experimentation! Find the right combination of characters, and you'll unlock special bonus animations and sounds, adding an extra layer of fun to your compositions.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <h3>Save and Share Your Creations</h3>
+                    <p>Once you're happy with your track, you can save it and share it with others. You can even download your mix to listen offline or post it on social media to show off your creative flair!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>FAQ: Everything You Need to Know</h2>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I play Sprunki Incredibox online for free?</p>
+                <p>A: Yes! You can Play Sprunki Incredibox Online free without any cost. There's no need to download or install anything; simply visit the website and start creating music directly in your browser.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: What is the difference between Sprunki Incredibox and the original Incredibox?</p>
+                <p>A: The primary difference lies in the characters and sounds. While the original Incredibox was developed by the creators, Sprunki Incredibox is a fan-made mod, meaning the sounds and characters are crafted by the community. It brings a new twist to the familiar gameplay with fresh content.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Do I need any special software to play Sprunki Incredibox online?</p>
+                <p>A: No, you don't need any additional software. Sprunki Incredibox is browser-based, meaning you can play it on almost any device with internet access. Whether on your computer or mobile, the experience is seamless.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I share my music with others?</p>
+                <p>A: Absolutely! After creating your track, you can share it online via social media or save it for later. Sprunki Incredibox even allows you to download your composition as an MP3, so you can listen to it offline or share it with friends.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is Sprunki Incredibox suitable for kids?</p>
+                <p>A: Yes, the game is suitable for all ages. It's intuitive enough for younger players to enjoy, but it also offers a lot of depth and creativity, keeping older players engaged for hours.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Are there any in-game purchases or ads?</p>
+                <p>A: No, Sprunki Incredibox is completely free to play, and there are no in-game purchases or disruptive ads. You can enjoy the full game experience without any interruptions.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How do I unlock special bonuses in Sprunki Incredibox?</p>
+                <p>A: Special bonuses are unlocked by discovering unique combinations of characters. These bonuses not only enhance your track with new sounds but also trigger fun animations, adding a visual element to your creation.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can I create music offline in Sprunki Incredibox?</p>
+                <p>A: Unfortunately, Sprunki Incredibox is an online game, so you need an internet connection to play. However, once you've created your mix, you can download it as an MP3 to listen to it offline.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Is Sprunki Incredibox available on mobile devices?</p>
+                <p>A: Yes, you can play Sprunki Incredibox Online on both desktop and mobile devices. The game's interface is mobile-friendly, making it easy to drag and drop characters even on a smaller screen.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How often is Sprunki Incredibox updated?</p>
+                <p>A: Since Sprunki Incredibox is a fan-driven mod, updates and new characters are added based on community input. This keeps the game fresh and allows for new creative possibilities regularly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sprunki-call-to-action">
+        <div class="container">
+            <h2>Ready to Play Sprunki Incredibox Online for Free?</h2>
+            <p>Start your music journey now! Play Sprunki Incredibox Online and unlock the power of creative music-making without any downloads or payments. Whether you're a seasoned composer or just looking to have some fun with sounds, Sprunki Incredibox offers something for everyone. Visit the website today, experiment with unique characters, and share your musical creations with the world!</p>
+            <p style="text-align: center;margin-top: 30px;">
+                <a href="#play-now" class="cta-button">Play Sprunki Incredibox Online</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        </div>
+        <div class="container">
+            <p><a href="https://github.com/qiayue/SprunkiIncredibox" style="color:white;">Sprunki Incredibox Github</a></p>
+        </div>
+        <div class="language-selector">
+            <p>Choose your language:</p>
+            <ul>
+                <li><a href="../" hreflang="en">English</a></li>
+                <li><a href="../ko/" hreflang="ko">한국어</a></li>
+                <li><a href="../ru/" hreflang="ru">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt">Português</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        navSlide();
+
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+        const gameContainer = document.querySelector('.game-container');
+
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function isLandscape() {
+            return window.innerWidth > window.innerHeight;
+        }
+
+        function handleMobileLayout() {
+            console.log('手机')
+            setTimeout(function() {
+                document.getElementById('domain-watermark').style.display = 'block'; // 显示域名水印
+            }, 1000);
+            document.querySelector('header').style.display = 'none';
+            gameContainer.style.height = '100vh';
+            gameContainer.style.width = '100vw';
+            gameContainer.style.position = 'fixed';
+            gameContainer.style.top = '0';
+            gameContainer.style.left = '0';
+            gameContainer.style.zIndex = '9999';
+            gameContainer.style.backgroundColor = '#000';
+
+            if (isLandscape()) {
+                gameIframe.style.width = '100vw';
+                gameIframe.style.height = '100vh';
+                gameIframe.style.transform = 'none';
+                gameIframe.style.position = 'static';
+                exitFullscreenBtn.style.transform = 'none';
+                document.getElementById('domain-watermark').style.display = 'block'; // 显示域名水印
+            } else {
+                gameIframe.style.width = '100vh';
+                gameIframe.style.height = '100vw';
+                gameIframe.style.transform = 'rotate(90deg)';
+                gameIframe.style.transformOrigin = 'top left';
+                gameIframe.style.position = 'absolute';
+                gameIframe.style.top = '0';
+                gameIframe.style.left = '100%';
+                exitFullscreenBtn.style.transform = 'rotate(90deg)';
+                document.getElementById('domain-watermark').style.display = 'none'; // 隐藏域名水印
+            }
+
+            fullscreenBtn.style.display = 'none';
+            exitFullscreenBtn.style.display = 'block';
+
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('landscape').catch(() => {
+                    console.log('Landscape lock not supported');
+                });
+            }
+        }
+
+        function handleDesktopLayout() {
+            fullscreenBtn.style.display = 'block';
+            exitFullscreenBtn.style.display = 'none';
+        }
+
+        function enterFullscreen() {
+            if (gameIframe.requestFullscreen) {
+                gameIframe.requestFullscreen();
+            } else if (gameIframe.mozRequestFullScreen) {
+                gameIframe.mozRequestFullScreen();
+            } else if (gameIframe.webkitRequestFullscreen) {
+                gameIframe.webkitRequestFullscreen();
+            } else if (gameIframe.msRequestFullscreen) {
+                gameIframe.msRequestFullscreen();
+            }
+            fullscreenBtn.style.display = 'none';
+            exitFullscreenBtn.style.display = 'block';
+        }
+
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+
+            if (isMobile()) {
+                document.querySelector('header').style.display = 'block';
+                gameContainer.style = '';
+                gameIframe.style = '';
+                document.getElementById('domain-watermark').style.display = 'none'; // 退出全屏时隐藏域名水印
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                }
+            }
+
+            fullscreenBtn.style.display = 'block';
+            exitFullscreenBtn.style.display = 'none';
+        }
+
+        window.addEventListener('load', () => {
+            if (isMobile()) {
+                handleMobileLayout();
+            } else {
+                handleDesktopLayout();
+            }
+        });
+
+        window.addEventListener('orientationchange', () => {
+            if (isMobile()) {
+                handleMobileLayout();
+            }
+        });
+
+        fullscreenBtn.addEventListener('click', enterFullscreen);
+        exitFullscreenBtn.addEventListener('click', exitFullscreen);
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && 
+                !document.mozFullScreenElement && !document.msFullscreenElement) {
+                exitFullscreen();
+            }
+        }
+    </script>
+    <div style="display:none">
+        <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
+    </div>
+</body>
+</html>
