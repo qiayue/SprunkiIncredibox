@@ -364,8 +364,8 @@
             return window.innerWidth > window.innerHeight;
         }
 
-        function handleMobileLayout() {
-            console.log('手机')
+        function handleMobileFullscreen() {
+            console.log('手机全屏')
             setTimeout(function() {
                 document.getElementById('domain-watermark').style.display = 'block';
             }, 1000);
@@ -380,13 +380,13 @@
 
             if (isLandscape()) {
                 gameIframe.style.width = '100vw';
-                gameIframe.style.height = '80vh'; // 调整为80vh
+                gameIframe.style.height = '100vh';
                 gameIframe.style.transform = 'none';
                 gameIframe.style.position = 'static';
                 exitFullscreenBtn.style.transform = 'none';
                 document.getElementById('domain-watermark').style.display = 'block';
             } else {
-                gameIframe.style.width = '80vh'; // 调整为80vh
+                gameIframe.style.width = '100vh';
                 gameIframe.style.height = '100vw';
                 gameIframe.style.transform = 'rotate(90deg)';
                 gameIframe.style.transformOrigin = 'top left';
@@ -407,12 +407,7 @@
             }
         }
 
-        function handleDesktopLayout() {
-            fullscreenBtn.style.display = 'block';
-            exitFullscreenBtn.style.display = 'none';
-        }
-
-        function enterFullscreen() {
+        function handleDesktopFullscreen() {
             if (gameIframe.requestFullscreen) {
                 gameIframe.requestFullscreen();
             } else if (gameIframe.mozRequestFullScreen) {
@@ -425,6 +420,16 @@
             fullscreenBtn.style.display = 'none';
             exitFullscreenBtn.style.display = 'block';
         }
+
+        function enterFullscreen() {
+            if (isMobile()) {
+                handleMobileFullscreen();
+            } else {
+                handleDesktopFullscreen();
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', enterFullscreen);
 
         function exitFullscreen() {
             if (document.exitFullscreen) {
@@ -451,21 +456,6 @@
             exitFullscreenBtn.style.display = 'none';
         }
 
-        window.addEventListener('load', () => {
-            if (isMobile()) {
-                handleMobileLayout();
-            } else {
-                handleDesktopLayout();
-            }
-        });
-
-        window.addEventListener('orientationchange', () => {
-            if (isMobile()) {
-                handleMobileLayout();
-            }
-        });
-
-        fullscreenBtn.addEventListener('click', enterFullscreen);
         exitFullscreenBtn.addEventListener('click', exitFullscreen);
 
         document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -479,6 +469,15 @@
                 exitFullscreen();
             }
         }
+
+        function autoEnterFullscreen() {
+            if (isMobile() && !isLandscape()) {
+                handleMobileFullscreen();
+            }
+        }
+
+        // 页面加载完成后自动触发横屏
+        window.addEventListener('load', autoEnterFullscreen);
     </script>
     <div style="display:none">
         <!-- Google tag (gtag.js) -->
