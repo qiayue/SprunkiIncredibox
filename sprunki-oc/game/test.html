@@ -5,102 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自定义角色生成器</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
         #character {
-            width: 200px;
+            width: 300px;
             height: 300px;
             position: relative;
+            margin: 0 auto;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
         }
-        #head, #body {
+        #character img {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 50%;
+            height: 100%;
         }
-        #head { top: 0; }
-        #body { bottom: 0; }
+        .controls {
+            margin-top: 20px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .category-button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            flex: 0 0 calc(33.33% - 5px);
+        }
+        .visual-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-start;
+        }
+        .visual-item {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .visual-item.selected {
+            border-color: #4CAF50;
+        }
+        .visual-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #exportBtn {
+            display: block;
+            width: 300px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto 0;
+        }
     </style>
 </head>
 <body>
-    <h1>自定义角色生成器</h1>
-    
-    <div id="character">
-        <img id="head" src="head1.png" alt="头部">
-        <img id="body" src="body1.png" alt="身体">
+    <div class="container">
+        <h1>自定义角色生成器</h1>
+        
+        <div id="character">
+            <img id="body" src="./img/body/download-1.png" alt="身体">
+            <img id="head" src="./img/head/download-1.png" alt="头部">
+            <img id="eyes" src="" alt="眼睛" style="display: none;">
+            <img id="mouth" src="" alt="嘴巴" style="display: none;">
+            <img id="hair" src="" alt="头发" style="display: none;">
+            <img id="headgear" src="" alt="头饰" style="display: none;">
+        </div>
+        
+        <div class="controls">
+            <div class="category-buttons">
+                <button class="category-button" data-category="body">身体</button>
+                <button class="category-button" data-category="head">头部</button>
+                <button class="category-button" data-category="eyes">眼睛</button>
+                <button class="category-button" data-category="mouth">嘴巴</button>
+                <button class="category-button" data-category="hair">头发</button>
+                <button class="category-button" data-category="headgear">头饰</button>
+            </div>
+            <div id="visualList" class="visual-list"></div>
+        </div>
+        
+        <button id="exportBtn">导出角色</button>
     </div>
-    
-    <div>
-        <h2>选择头部</h2>
-        <select id="headSelect">
-            <option value="head1.png">头部1</option>
-            <option value="head2.png">头部2</option>
-            <option value="head3.png">头部3</option>
-        </select>
-    </div>
-    
-    <div>
-        <h2>选择身体</h2>
-        <select id="bodySelect">
-            <option value="body1.png">身体1</option>
-            <option value="body2.png">身体2</option>
-            <option value="body3.png">身体3</option>
-        </select>
-    </div>
-    
-    <div>
-        <h2>头部颜色</h2>
-        <input type="color" id="headColor">
-    </div>
-    
-    <div>
-        <h2>身体颜色</h2>
-        <input type="color" id="bodyColor">
-    </div>
-    
-    <button id="exportBtn">导出角色</button>
 
     <script>
-        const headSelect = document.getElementById('headSelect');
-        const bodySelect = document.getElementById('bodySelect');
-        const headColor = document.getElementById('headColor');
-        const bodyColor = document.getElementById('bodyColor');
-        const exportBtn = document.getElementById('exportBtn');
-        const headImg = document.getElementById('head');
-        const bodyImg = document.getElementById('body');
+        const parts = ['body', 'head', 'eyes', 'mouth', 'hair', 'headgear'];
+        const partCounts = {
+            'body': 13,
+            'head': 11,
+            'eyes': 6,
+            'mouth': 7,
+            'hair': 3,
+            'headgear': 5
+        };
+        let currentCategory = 'body';
+
+        function createVisualList(category) {
+            const list = document.getElementById('visualList');
+            list.innerHTML = '';
+            
+            // 添加空选项
+            const emptyItem = document.createElement('div');
+            emptyItem.className = 'visual-item';
+            emptyItem.dataset.value = '';
+            emptyItem.innerHTML = '<span>无</span>';
+            list.appendChild(emptyItem);
+            
+            for (let i = 1; i <= partCounts[category]; i++) {
+                const item = document.createElement('div');
+                item.className = 'visual-item';
+                item.dataset.value = `./img/${category}/download-${i}.png`;
+                item.innerHTML = `<img src="./img/${category}/download-${i}.png" alt="${category}${i}">`;
+                list.appendChild(item);
+            }
+
+            // 设置默认选中项
+            const selectedValue = document.getElementById(category).src;
+            const selectedItem = list.querySelector(`[data-value="${selectedValue}"]`) || list.children[0];
+            selectedItem.classList.add('selected');
+        }
 
         function updateCharacter() {
-            headImg.src = headSelect.value;
-            bodyImg.src = bodySelect.value;
-            headImg.style.filter = `hue-rotate(${getHueRotation(headColor.value)}deg)`;
-            bodyImg.style.filter = `hue-rotate(${getHueRotation(bodyColor.value)}deg)`;
+            parts.forEach(part => {
+                const img = document.getElementById(part);
+                const selectedItem = document.querySelector(`#visualList .selected`);
+                if (selectedItem && selectedItem.dataset.value && part === currentCategory) {
+                    img.src = selectedItem.dataset.value;
+                    img.style.display = 'block';
+                } else if (!selectedItem.dataset.value && part === currentCategory) {
+                    img.style.display = 'none';
+                }
+            });
         }
 
-        function getHueRotation(hex) {
-            const rgb = parseInt(hex.slice(1), 16);
-            const r = (rgb >> 16) & 0xff;
-            const g = (rgb >>  8) & 0xff;
-            const b = (rgb >>  0) & 0xff;
-            const hue = Math.atan2(Math.sqrt(3) * (g - b), 2 * r - g - b) * 180 / Math.PI;
-            return hue;
-        }
+        document.querySelector('.category-buttons').addEventListener('click', (e) => {
+            if (e.target.classList.contains('category-button')) {
+                currentCategory = e.target.dataset.category;
+                createVisualList(currentCategory);
+            }
+        });
 
-        headSelect.addEventListener('change', updateCharacter);
-        bodySelect.addEventListener('change', updateCharacter);
-        headColor.addEventListener('input', updateCharacter);
-        bodyColor.addEventListener('input', updateCharacter);
+        document.getElementById('visualList').addEventListener('click', (e) => {
+            const clickedItem = e.target.closest('.visual-item');
+            if (clickedItem) {
+                document.querySelectorAll('#visualList .visual-item').forEach(item => item.classList.remove('selected'));
+                clickedItem.classList.add('selected');
+                updateCharacter();
+            }
+        });
 
-        exportBtn.addEventListener('click', () => {
+        document.getElementById('exportBtn').addEventListener('click', () => {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
-            canvas.width = 200;
+            canvas.width = 300;
             canvas.height = 300;
-            ctx.filter = headImg.style.filter;
-            ctx.drawImage(headImg, 0, 0, 200, 150);
-            ctx.filter = bodyImg.style.filter;
-            ctx.drawImage(bodyImg, 0, 150, 200, 150);
+            parts.forEach(part => {
+                const img = document.getElementById(part);
+                if (img.style.display !== 'none') {
+                    ctx.drawImage(img, 0, 0, 300, 300);
+                }
+            });
             const link = document.createElement('a');
             link.href = canvas.toDataURL();
             link.download = '角色.png';
             link.click();
         });
+
+        createVisualList('body'); // 初始化显示身体选项
+        updateCharacter(); // 初始化角色显示
     </script>
 </body>
 </html>
