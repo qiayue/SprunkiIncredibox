@@ -369,7 +369,7 @@
         function handleMobileLayout() {
             console.log('手机')
             setTimeout(function() {
-                document.getElementById('domain-watermark').style.display = 'block'; // 显示域名水印
+                document.getElementById('domain-watermark').style.display = 'block';
             }, 1000);
             document.querySelector('header').style.display = 'none';
             gameContainer.style.height = '100vh';
@@ -382,13 +382,13 @@
 
             if (isLandscape()) {
                 gameIframe.style.width = '100vw';
-                gameIframe.style.height = '100vh';
+                gameIframe.style.height = '80vh'; // 调整为80vh
                 gameIframe.style.transform = 'none';
                 gameIframe.style.position = 'static';
                 exitFullscreenBtn.style.transform = 'none';
-                document.getElementById('domain-watermark').style.display = 'block'; // 显示域名水印
+                document.getElementById('domain-watermark').style.display = 'block';
             } else {
-                gameIframe.style.width = '100vh';
+                gameIframe.style.width = '80vh'; // 调整为80vh
                 gameIframe.style.height = '100vw';
                 gameIframe.style.transform = 'rotate(90deg)';
                 gameIframe.style.transformOrigin = 'top left';
@@ -396,7 +396,7 @@
                 gameIframe.style.top = '0';
                 gameIframe.style.left = '100%';
                 exitFullscreenBtn.style.transform = 'rotate(90deg)';
-                document.getElementById('domain-watermark').style.display = 'none'; // 隐藏域名水印
+                document.getElementById('domain-watermark').style.display = 'none';
             }
 
             fullscreenBtn.style.display = 'none';
