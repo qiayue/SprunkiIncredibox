@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页标题</title>
+    <meta name="description" content="网页描述，包含关键词和吸引人的内容。">
+    <script src="../tailwind.js"></script>
+    <link rel="stylesheet" href="../tailwind.css">
+</head>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-6 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
+                <div class="logo">
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox</a>
+                </div>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="../neesterversal-v3-incredibox/" class="hover:text-yellow-400 transition duration-300"
+                            title="Play Neesterversal"><i class="fas fa-play mr-1"></i> Neesterversal V3</a></li>
+                    <li><a href="../gray-sprunki/" class="hover:text-yellow-400 transition duration-300"
+                            title="Play Gray Sprunki"><i class="fas fa-play mr-1"></i> Gray Sprunki</a></li>
+                    <li><a href="../sprunki-oc/" class="hover:text-yellow-400 transition duration-300"
+                            title="Play Sprunki OC"><i class="fas fa-play mr-1"></i> Sprunki OC</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"
+                            title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
+                </ul>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-1 w-6 my-1"></div>
+                    <div class="line2 bg-white h-1 w-6 my-1"></div>
+                    <div class="line3 bg-white h-1 w-6 my-1"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- 添加顶部内边距以避免被固定头部遮挡 -->
+        <!-- Main Game Section with iframe -->
+        <section id="main-game" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h1 class="text-5xl font-bold text-center mb-4 text-red-800">Sprunki Incredibox</h1>
+                <h2 class="text-3xl font-semibold text-center mb-8 text-gray-700">创造你的独特节拍</h2>
+                
+                <div class="game-container relative w-full max-w-4xl mx-auto">
+                    <iframe id="game-iframe" src="https://s.sprunkiincredibox.com/game/sprunki/index.html" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                    <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                        <i class="fas fa-expand mr-2"></i> 全屏
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Games Section -->
+        <section id="related-games" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">探索更多音乐冒险</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">发现Incredibox宇宙中其他激动人心的音乐创作游戏！</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- 游戏卡片 1 -->
+                    <a href="../" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="https://s.sprunkiincredibox.com/img/sprunki.png" alt="Sprunki Incredibox" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Sprunki Incredibox</h3>
+                            <p class="text-gray-600">用古怪的角色创造活力四射的节拍！</p>
+                        </div>
+                    </a>
+                    <!-- 游戏卡片 2 -->
+                    <a href="../neesterversal-v3-incredibox/" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="https://s.sprunkiincredibox.com/img/neesterversal.png" alt="Neesterversal V3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Neesterversal V3</h3>
+                            <p class="text-gray-600">体验音乐创作的下一次进化！</p>
+                        </div>
+                    </a>
+                    <!-- 游戏卡片 3 -->
+                    <a href="../gray-sprunki/" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <img src="https://s.sprunkiincredibox.com/img/gray-sprunki.png" alt="Gray Sprunki" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Gray Sprunki</h3>
+                            <p class="text-gray-600">探索单色世界中的音乐奇迹！</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="introduction bg-white py-16" id="introduction">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Introduction to XXX</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">XXX is an exciting new game that combines...</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What is XXX?</h3>
+                        <p class="text-gray-700">XXX is a unique gaming experience that...</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Why Play XXX?</h3>
+                        <p class="text-gray-700">XXX offers players an unparalleled opportunity to...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features bg-gradient-to-b from-gray-200 to-white py-16" id="features">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">XXX Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🎮</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Immersive Gameplay</h3>
+                        <p class="text-gray-600">Experience a deeply engaging world...</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🏆</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Challenging Missions</h3>
+                        <p class="text-gray-600">Test your skills with our diverse range of missions...</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🌟</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Customization Options</h3>
+                        <p class="text-gray-600">Make the game truly yours with extensive customization...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <section class="how-to-play bg-white py-16" id="how-to-play">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Play XXX</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">1</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Create Your Character</h3>
+                        <p class="text-gray-700">Start by designing your unique avatar...</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">2</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Explore the World</h3>
+                        <p class="text-gray-700">Venture into the vast, open world of XXX...</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">3</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Complete Missions</h3>
+                        <p class="text-gray-700">Take on exciting quests and challenges...</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">4</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Level Up</h3>
+                        <p class="text-gray-700">Gain experience and unlock new abilities...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="tips bg-gradient-to-b from-white to-gray-100 py-16" id="tips">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">XXX Pro Tips</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Master the Controls</h3>
+                        <p class="text-gray-600">Take time to familiarize yourself with the game controls...</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Upgrade Wisely</h3>
+                        <p class="text-gray-600">Focus on upgrading skills that match your playstyle...</p>
+                    </div>
+                    <!-- Add more tips as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq bg-white py-16" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Frequently Asked Questions</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What platforms is XXX available on?</h3>
+                        <p class="text-gray-700">XXX is currently available on...</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Is XXX free to play?</h3>
+                        <p class="text-gray-700">XXX offers both free and premium options...</p>
+                    </div>
+                    <!-- Add more FAQ items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Play Section -->
+        <section class="ready-to-play bg-gradient-to-r from-red-800 to-red-900 text-white py-20" id="ready-to-play">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6">Ready to Play XXX?</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Join millions of players worldwide and start your XXX adventure today!</p>
+                <a href="#" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play XXX Now!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        </div>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox" class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
+        </div>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en" class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko" class="text-white hover:text-yellow-400 transition duration-300">한국</a></li>
+                <li><a href="../ru/" hreflang="ru" class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt" class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // 添加全屏功能
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameIframe.requestFullscreen) {
+                gameIframe.requestFullscreen();
+            } else if (gameIframe.mozRequestFullScreen) { // Firefox
+                gameIframe.mozRequestFullScreen();
+            } else if (gameIframe.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
+                gameIframe.webkitRequestFullscreen();
+            } else if (gameIframe.msRequestFullscreen) { // IE/Edge
+                gameIframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+
+</html>
