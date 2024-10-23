@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +17,16 @@
             padding: 20px;
             box-sizing: border-box;
         }
+
         .container {
             background-color: white;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
         }
+
         #character {
             width: 300px;
             height: 300px;
@@ -33,6 +36,7 @@
             border-radius: 5px;
             overflow: hidden;
         }
+
         #character img {
             position: absolute;
             top: 0;
@@ -40,18 +44,22 @@
             width: 100%;
             height: 100%;
         }
+
         .controls {
             margin-top: 20px;
             width: 300px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .category-buttons {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            overflow-x: auto;
+            white-space: nowrap;
             margin-bottom: 10px;
+            padding-bottom: 5px;
         }
+
         .category-button {
             padding: 10px;
             background-color: #4CAF50;
@@ -59,16 +67,24 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 5px;
-            flex: 0 0 calc(33.33% - 5px);
+            margin-right: 5px;
+            flex: 0 0 auto;
         }
+
         .visual-list {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 10px;
             justify-content: flex-start;
+            align-content: flex-start;
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 5px;
+            width: 300px;
+            min-height: 200px;
         }
+
         .visual-item {
             width: 60px;
             height: 60px;
@@ -77,15 +93,21 @@
             overflow: hidden;
             cursor: pointer;
             transition: border-color 0.3s;
+            flex: 0 0 auto;
+            align-content: center;
+            text-align: center;
         }
+
         .visual-item.selected {
             border-color: #4CAF50;
         }
+
         .visual-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         #exportBtn {
             display: block;
             width: 300px;
@@ -99,10 +121,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>自定义角色生成器</h1>
-        
+
         <div id="character">
             <img id="body" src="./img/body/download-1.png" alt="身体">
             <img id="head" src="./img/head/download-1.png" alt="头部">
@@ -111,7 +134,7 @@
             <img id="hair" src="" alt="头发" style="display: none;">
             <img id="headgear" src="" alt="头饰" style="display: none;">
         </div>
-        
+
         <div class="controls">
             <div class="category-buttons">
                 <button class="category-button" data-category="body">身体</button>
@@ -120,51 +143,69 @@
                 <button class="category-button" data-category="mouth">嘴巴</button>
                 <button class="category-button" data-category="hair">头发</button>
                 <button class="category-button" data-category="headgear">头饰</button>
+                <button class="category-button" data-category="background">背景</button>
             </div>
             <div id="visualList" class="visual-list"></div>
         </div>
-        
+
         <button id="exportBtn">导出角色</button>
     </div>
 
     <script>
         const parts = ['body', 'head', 'eyes', 'mouth', 'hair', 'headgear'];
         const partCounts = {
-            'body': 13,
-            'head': 11,
+            'body': 18,
+            'head': 18,
             'eyes': 6,
             'mouth': 7,
-            'hair': 3,
+            'hair': 13,
             'headgear': 5
         };
         let currentCategory = 'body';
+        let backgroundColor = 'transparent';
 
         function createVisualList(category) {
             const list = document.getElementById('visualList');
             list.innerHTML = '';
-            
-            // 添加空选项
-            const emptyItem = document.createElement('div');
-            emptyItem.className = 'visual-item';
-            emptyItem.dataset.value = '';
-            emptyItem.innerHTML = '<span>无</span>';
-            list.appendChild(emptyItem);
-            
-            for (let i = 1; i <= partCounts[category]; i++) {
-                const item = document.createElement('div');
-                item.className = 'visual-item';
-                item.dataset.value = `./img/${category}/download-${i}.png`;
-                item.innerHTML = `<img src="./img/${category}/download-${i}.png" alt="${category}${i}">`;
-                list.appendChild(item);
-            }
 
-            // 设置默认选中项
-            const selectedValue = document.getElementById(category).src;
-            const selectedItem = list.querySelector(`[data-value="${selectedValue}"]`) || list.children[0];
-            selectedItem.classList.add('selected');
+            if (category === 'background') {
+                const colors = ['transparent', 'red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray'];
+                colors.forEach(color => {
+                    const item = document.createElement('div');
+                    item.className = 'visual-item';
+                    item.dataset.value = color;
+                    item.style.backgroundColor = color === 'transparent' ? 'white' : color;
+                    item.innerHTML = color === 'transparent' ? '透明' : '';
+                    if (color === backgroundColor) {
+                        item.classList.add('selected');
+                    }
+                    list.appendChild(item);
+                });
+            } else {
+                // 添加空选项
+                const emptyItem = document.createElement('div');
+                emptyItem.className = 'visual-item';
+                emptyItem.dataset.value = '';
+                emptyItem.innerHTML = '<span>无</span>';
+                list.appendChild(emptyItem);
+
+                for (let i = 1; i <= partCounts[category]; i++) {
+                    const item = document.createElement('div');
+                    item.className = 'visual-item';
+                    item.dataset.value = `./img/${category}/download-${i}.png`;
+                    item.innerHTML = `<img src="./img/${category}/download-${i}.png" alt="${category}${i}">`;
+                    list.appendChild(item);
+                }
+
+                // 设置默认选中项
+                const selectedValue = document.getElementById(category).src;
+                const selectedItem = list.querySelector(`[data-value="${selectedValue}"]`) || list.children[0];
+                selectedItem.classList.add('selected');
+            }
         }
 
         function updateCharacter() {
+            document.getElementById('character').style.backgroundColor = backgroundColor;
             parts.forEach(part => {
                 const img = document.getElementById(part);
                 const selectedItem = document.querySelector(`#visualList .selected`);
@@ -189,6 +230,9 @@
             if (clickedItem) {
                 document.querySelectorAll('#visualList .visual-item').forEach(item => item.classList.remove('selected'));
                 clickedItem.classList.add('selected');
+                if (currentCategory === 'background') {
+                    backgroundColor = clickedItem.dataset.value;
+                }
                 updateCharacter();
             }
         });
@@ -198,6 +242,11 @@
             const ctx = canvas.getContext('2d');
             canvas.width = 300;
             canvas.height = 300;
+            
+            // 绘制背景
+            ctx.fillStyle = backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
             parts.forEach(part => {
                 const img = document.getElementById(part);
                 if (img.style.display !== 'none') {
@@ -214,4 +263,5 @@
         updateCharacter(); // 初始化角色显示
     </script>
 </body>
+
 </html>
