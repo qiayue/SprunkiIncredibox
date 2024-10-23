@@ -1,0 +1,22 @@
+{
+    "name": "Sprunki Incredibox",
+    "short_name": "Sprunki",
+    "start_url": "/play/",
+    "display": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#FF0000",
+    "orientation": "portrait-primary",
+    "form_factor": "wide",
+    "icons": [
+      {
+        "src": "/img/icon/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/icon/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
