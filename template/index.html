@@ -28,70 +28,57 @@
                                 class="fas fa-play mr-1"></i> Play Sprunki</a></li>
                     <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
                                 class="fas fa-download mr-1"></i> Download</a></li>
-                    <li><a href="../neesterversal-v3-incredibox/" class="hover:text-yellow-400 transition duration-300"
-                            title="Play Neesterversal"><i class="fas fa-play mr-1"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/" class="hover:text-yellow-400 transition duration-300"
-                            title="Play Gray Sprunki"><i class="fas fa-play mr-1"></i> Gray Sprunki</a></li>
-                    <li><a href="../sprunki-oc/" class="hover:text-yellow-400 transition duration-300"
-                            title="Play Sprunki OC"><i class="fas fa-play mr-1"></i> Sprunki OC</a></li>
                     <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"
                             title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
                 <div class="burger md:hidden cursor-pointer">
-                    <div class="line1 bg-white h-1 w-6 my-1"></div>
-                    <div class="line2 bg-white h-1 w-6 my-1"></div>
-                    <div class="line3 bg-white h-1 w-6 my-1"></div>
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main class="pt-20"> <!-- 添加顶部内边距以避免被固定头部遮挡 -->
-        <!-- Main Game Section with iframe -->
-        <section id="main-game" class="bg-white py-16">
-            <div class="container mx-auto px-4">
-                <h1 class="text-5xl font-bold text-center mb-4 text-red-800">Sprunki Incredibox</h1>
-                <h2 class="text-3xl font-semibold text-center mb-8 text-gray-700">创造你的独特节拍</h2>
-                
-                <div class="game-container relative w-full max-w-4xl mx-auto">
-                    <iframe id="game-iframe" src="https://s.sprunkiincredibox.com/game/sprunki/index.html" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
-                    <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
-                        <i class="fas fa-expand mr-2"></i> 全屏
-                    </button>
-                </div>
-            </div>
-        </section>
+    <!-- 添加移动端导航菜单 -->
+    <div class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Mod</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
 
-        <!-- Recommended Games Section -->
-        <section id="related-games" class="bg-gray-100 py-16">
+    <main class="pt-20">
+        <!-- Main Game Section with iframe -->
+        <section id="play-now" class="bg-white py-6">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">探索更多音乐冒险</h2>
-                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">发现Incredibox宇宙中其他激动人心的音乐创作游戏！</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    <!-- 游戏卡片 1 -->
-                    <a href="../" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
-                        <img src="https://s.sprunkiincredibox.com/img/sprunki.png" alt="Sprunki Incredibox" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Sprunki Incredibox</h3>
-                            <p class="text-gray-600">用古怪的角色创造活力四射的节拍！</p>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Play XXX Now</h2>
+                        <div id="game-container" class="game-container relative w-full max-w-4xl mx-auto">
+                            <iframe id="game-iframe" src="https://s.sprunkiincredibox.com/game/sprunki/index.html" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                            <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                                <i class="fas fa-expand mr-2"></i> Fullscreen
+                            </button>
+                            <button id="exit-fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center hidden">
+                                <i class="fas fa-compress mr-2"></i> Exit Fullscreen
+                            </button>
+                            <div id="domain-watermark" class="absolute top-4 left-4 text-white text-xl font-bold opacity-50 hidden">
+                                sprunkiincredibox.com
+                            </div>
                         </div>
-                    </a>
-                    <!-- 游戏卡片 2 -->
-                    <a href="../neesterversal-v3-incredibox/" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
-                        <img src="https://s.sprunkiincredibox.com/img/neesterversal.png" alt="Neesterversal V3" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Neesterversal V3</h3>
-                            <p class="text-gray-600">体验音乐创作的下一次进化！</p>
+                    </div>
+                    
+                    <!-- Recommended Games Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-2 text-red-800">Explore More Musical Adventures</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- 添加推荐游戏卡片 -->
                         </div>
-                    </a>
-                    <!-- 游戏卡片 3 -->
-                    <a href="../gray-sprunki/" class="bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
-                        <img src="https://s.sprunkiincredibox.com/img/gray-sprunki.png" alt="Gray Sprunki" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2 text-red-700">Gray Sprunki</h3>
-                            <p class="text-gray-600">探索单色世界中的音乐奇迹！</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -231,21 +218,42 @@
         </div>
     </footer>
 
-    <script>
-        // 添加全屏功能
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
-        const gameIframe = document.getElementById('game-iframe');
+    <script type="module">
+        import { enterFullscreen, exitFullscreen, handleFullscreenChange, autoEnterFullscreen } from '../fullscreen.js';
 
-        fullscreenBtn.addEventListener('click', () => {
-            if (gameIframe.requestFullscreen) {
-                gameIframe.requestFullscreen();
-            } else if (gameIframe.mozRequestFullScreen) { // Firefox
-                gameIframe.mozRequestFullScreen();
-            } else if (gameIframe.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
-                gameIframe.webkitRequestFullscreen();
-            } else if (gameIframe.msRequestFullscreen) { // IE/Edge
-                gameIframe.msRequestFullscreen();
-            }
+        const gameContainer = document.getElementById('game-container');
+        const gameIframe = document.getElementById('game-iframe');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const domainWatermark = document.getElementById('domain-watermark');
+
+        fullscreenBtn.addEventListener('click', () => enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+        exitFullscreenBtn.addEventListener('click', () => exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+        document.addEventListener('fullscreenchange', () => handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+
+        // Auto enter fullscreen on mobile devices in portrait mode
+        window.addEventListener('load', () => autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+        window.addEventListener('resize', () => autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+
+        // 汉堡按钮功能
+        const burger = document.querySelector('.burger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const body = document.body;
+
+        burger.addEventListener('click', () => {
+            mobileNav.classList.toggle('-translate-x-full');
+            body.classList.toggle('overflow-hidden');
+            burger.classList.toggle('active');
+        });
+
+        // 汉堡按钮动画
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            burger.children[0].classList.toggle('rotate-45');
+            burger.children[0].classList.toggle('translate-y-1.5');
+            burger.children[1].classList.toggle('opacity-0');
+            burger.children[2].classList.toggle('-rotate-45');
+            burger.children[2].classList.toggle('-translate-y-1.5');
         });
     </script>
 </body>
