@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,237 +9,282 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../img/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/icon/favicon-16x16.png">
-    <link rel="icon" href="../favicon.ico"/>
+    <link rel="icon" href="../favicon.ico" />
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="canonical" href="https://sprunkiincredibox.com/fnf/"/>
+    <link rel="canonical" href="https://sprunkiincredibox.com/fnf/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../tailwind.js"></script>
-    <link rel="stylesheet" href="../style.css?v=09301430">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
-     crossorigin="anonymous"></script>
-    <style type="text/css">
-        /* Existing styles... */
-    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="../" class="flex center items-center"><i class="fas mr-2 fa-music hidden sm:block"></i> Sprunki Incredibox
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox
+                    </a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="../play/"><i class="fas fa-play"></i> Play Sprunki</a></li>
-                    <li><a href="../download/"><i class="fas fa-download"></i> Download</a></li>
-                    <li><a href="../neesterversal-v3-incredibox/" title="Play Neesterversal"><i class="fas fa-play"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/" title="Play Gray Sprunki"><i class="fas fa-play"></i> Gray Sprunki</a></li>
-                    <li><a href="../sprunki-oc/" title="Play Sprunki OC"><i class="fas fa-play"></i> Sprunki OC</a></li>
-                    <li><a href="../sprunki-characters/" title="Sprunki Characters"><i class="fas fa-users"></i> Characters</a></li>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Mod</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300" title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero mt-[70px]">
-        <div class="hero-content container">
-            <h1>FNF vs Sprunki – Sprunkin: Play the Sprunki FNF Mod</h1>
-            <h2 style="color:white;">Welcome to Sprunkin – Sprunki FNF Mod Awaits!</h2>
-            <a href="#play-now" class="cta-button"><i class="fas fa-play"></i> Play Sprunki FNF Now</a>
-        </div>
-    </section>
+    <!-- 移动端导航菜单 -->
+    <div class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Mod</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
 
-    <section id="play-now" class="play-area">
-        <div class="container">
-            <h2>Play Sprunki FNF Now</h2>
-            <div class="game-container">
-                <iframe id="game-iframe" src="https://w8.snokido.com/games/html5/friday-night-funkin/sprunkin/index.html" frameborder="0" width="100%" height="700px"></iframe>
-                <button id="fullscreen-btn" class="fullscreen-button">
-                    <i class="fas fa-expand"></i> Fullscreen
-                </button>
-                <button id="exit-fullscreen-btn" class="fullscreen-button" style="display: none;">
-                    <i class="fas fa-compress"></i> Exit Fullscreen
-                </button>
-                <div id="domain-watermark" style="display: none;">sprunkiincredibox.com</div>
+    <main class="pt-14">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-red-700 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-6">FNF vs Sprunki – Sprunkin: Play the Sprunki FNF Mod</h1>
+                <h2 class="text-2xl mb-10">Welcome to Sprunkin – Sprunki FNF Mod Awaits!</h2>
+                <a href="#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">
+                    <i class="fas fa-play mr-2"></i> Play Sprunki FNF Now
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-sprunki" id="about">
-        <div class="container">
-            <h2>Introduction: What is Sprunki FNF – Sprunkin?</h2>
-            <p>Sprunki FNF – Sprunkin is a creative and exciting mod of the popular rhythm game Friday Night Funkin' (FNF). In this mod, players face off against Sprunki, a colorful and energetic character with a unique musical style. Sprunkin adds fresh songs and challenges to the familiar FNF rhythm gameplay, all while maintaining the core mechanics that fans of the original game love. Dive into the music, challenge your reflexes, and enjoy the vibrant world of Sprunki online!</p>
-        </div>
-    </section>
+        <!-- Main Game Section with iframe -->
+        <section id="play-now" class="bg-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Play Sprunki FNF Now</h2>
+                        <div class="game-container relative w-full max-w-4xl mx-auto">
+                            <iframe id="game-iframe" src="https://w8.snokido.com/games/html5/friday-night-funkin/sprunkin/index.html" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                            <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                                <i class="fas fa-expand mr-2"></i> Fullscreen
+                            </button>
+                            <button id="exit-fullscreen-btn" class="fixed top-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm z-50 hidden">
+                                <i class="fas fa-compress mr-2"></i> Exit
+                            </button>
+                            <a href="https://sprunkiincredibox.com/" id="domain-watermark" class="absolute top-1/2 right-0 transform rotate-90 translate-y-[-50%] text-white hidden">SprunkiIncredibox.com</a>
+                        </div>
+                    </div>
 
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Features of Sprunki FNF – Sprunkin</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Meet Sprunki:</h3>
-                    <p>Sprunki is the main character of this mod, bringing a fun, upbeat energy to the Friday Night Funkin' universe. With a playful demeanor and an unforgettable musical style, Sprunkin offers a unique challenge that's both engaging and visually appealing.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Fresh Soundtrack:</h3>
-                    <p>The Sprunki FNF – Sprunkin mod introduces original songs that match Sprunki's personality. Each track is designed to test players' rhythm and reflexes while immersing them in a unique musical experience. The songs have a mix of playful and intense beats, keeping players engaged from start to finish.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Enhanced Visuals and Animations:</h3>
-                    <p>The mod includes vibrant, smoothly animated visuals that complement the high-energy tracks. The transitions and character movements are polished and fluid, elevating the overall aesthetic and making the mod a visually satisfying experience.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Increasing Difficulty:</h3>
-                    <p>As players progress through Sprunki FNF – Sprunkin, the songs become more challenging, requiring quick reflexes and precise timing. The mod is designed to cater to both newcomers and experienced FNF players, ensuring an exciting challenge for everyone.</p>
+                    <!-- Explore More Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Explore More</h2>
+                        <div id="recommended-games-container" class="grid grid-cols-2 gap-4"></div>
+                        <!-- JavaScript will populate this container -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="how-it-works" id="how-to">
-        <div class="container">
-            <h2>How to Play Sprunki FNF – Sprunkin</h2>
-            <div class="step-grid">
-                <div class="step-item">
-                    <h3>Play Directly Online:</h3>
-                    <p>You can play Sprunki FNF – Sprunkin directly on our site—no downloads or installations required! Just click the play button and jump into the rhythm battle against Sprunki.</p>
+        <!-- Introduction Section -->
+        <section class="bg-white py-16" id="about">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Introduction: What is Sprunki FNF – Sprunkin?</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">Sprunki FNF – Sprunkin is a creative and exciting mod of the popular rhythm game Friday Night Funkin' (FNF). In this mod, players face off against Sprunki, a colorful and energetic character with a unique musical style. Sprunkin adds fresh songs and challenges to the familiar FNF rhythm gameplay, all while maintaining the core mechanics that fans of the original game love. Dive into the music, challenge your reflexes, and enjoy the vibrant world of Sprunki online!</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-gradient-to-b from-gray-200 to-white py-16" id="features">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Features of Sprunki FNF – Sprunkin</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Meet Sprunki:</h3>
+                        <p class="text-gray-600">Sprunki is the main character of this mod, bringing a fun, upbeat energy to the Friday Night Funkin' universe. With a playful demeanor and an unforgettable musical style, Sprunkin offers a unique challenge that's both engaging and visually appealing.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Fresh Soundtrack:</h3>
+                        <p class="text-gray-600">The Sprunki FNF – Sprunkin mod introduces original songs that match Sprunki's personality. Each track is designed to test players' rhythm and reflexes while immersing them in a unique musical experience. The songs have a mix of playful and intense beats, keeping players engaged from start to finish.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Enhanced Visuals and Animations:</h3>
+                        <p class="text-gray-600">The mod includes vibrant, smoothly animated visuals that complement the high-energy tracks. The transitions and character movements are polished and fluid, elevating the overall aesthetic and making the mod a visually satisfying experience.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Increasing Difficulty:</h3>
+                        <p class="text-gray-600">As players progress through Sprunki FNF – Sprunkin, the songs become more challenging, requiring quick reflexes and precise timing. The mod is designed to cater to both newcomers and experienced FNF players, ensuring an exciting challenge for everyone.</p>
+                    </div>
                 </div>
-                <div class="step-item">
-                    <h3>Master the Controls:</h3>
-                    <p>The gameplay of Sprunki FNF follows the familiar mechanics of Friday Night Funkin'. You'll need to hit the arrow keys in time with the beat to out-duel your opponent. Precision is key, especially when the tempo picks up during the more intense moments of the song.</p>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <section class="bg-white py-16" id="how-to">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Play Sprunki FNF – Sprunkin</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Play Directly Online:</h3>
+                        <p class="text-gray-700">You can play Sprunki FNF – Sprunkin directly on our site—no downloads or installations required! Just click the play button and jump into the rhythm battle against Sprunki.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Master the Controls:</h3>
+                        <p class="text-gray-700">The gameplay of Sprunki FNF follows the familiar mechanics of Friday Night Funkin'. You'll need to hit the arrow keys in time with the beat to out-duel your opponent. Precision is key, especially when the tempo picks up during the more intense moments of the song.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Unlock Hidden Surprises:</h3>
+                        <p class="text-gray-700">As you progress through the mod, you may encounter surprises along the way—whether it's a shift in the song or an unexpected twist in the visuals. Keep your eyes peeled, as the mod is full of hidden gems that add depth to the experience.</p>
+                    </div>
                 </div>
-                <div class="step-item">
-                    <h3>Unlock Hidden Surprises:</h3>
-                    <p>As you progress through the mod, you may encounter surprises along the way—whether it's a shift in the song or an unexpected twist in the visuals. Keep your eyes peeled, as the mod is full of hidden gems that add depth to the experience.</p>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="bg-gradient-to-b from-white to-gray-100 py-16" id="tips">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Tips and Tricks for Playing Sprunki FNF – Sprunkin</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Stay in Rhythm:</h3>
+                        <p class="text-gray-600">The key to winning in Sprunki FNF – Sprunkin is to stay perfectly in rhythm with the beat. Practice makes perfect, especially as the music changes tempo mid-battle. Keep your focus and timing sharp, as the difficulty spikes as you progress.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Learn the Tracks:</h3>
+                        <p class="text-gray-600">Each song in Sprunki FNF – Sprunkin has its own unique rhythm and pattern. Take time to practice and learn the beat of each track to master the game's increasing difficulty.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Watch for Visual Cues:</h3>
+                        <p class="text-gray-600">The visuals in Sprunki FNF – Sprunkin not only add to the atmosphere but also serve as cues for upcoming shifts in the music. Pay attention to changes in the background and character expressions—they often signal when the song is about to change its tone.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Embrace the Dark Turn:</h3>
+                        <p class="text-gray-600">When the music takes its spooky turn, the atmosphere and tempo may shift dramatically. Embrace these changes and stay calm under pressure—this is where the real challenge begins, and mastering it will feel incredibly rewarding.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="sprunki-tips">
-        <div class="container">
-            <h2>Tips and Tricks for Playing Sprunki FNF – Sprunkin</h2>
-            <ul class="tip-list">
-                <li>
-                    <h3>Stay in Rhythm:</h3>
-                    <p>The key to winning in Sprunki FNF – Sprunkin is to stay perfectly in rhythm with the beat. Practice makes perfect, especially as the music changes tempo mid-battle. Keep your focus and timing sharp, as the difficulty spikes as you progress.</p>
-                </li>
-                <li>
-                    <h3>Learn the Tracks:</h3>
-                    <p>Each song in Sprunki FNF – Sprunkin has its own unique rhythm and pattern. Take time to practice and learn the beat of each track to master the game's increasing difficulty.</p>
-                </li>
-                <li>
-                    <h3>Watch for Visual Cues:</h3>
-                    <p>The visuals in Sprunki FNF – Sprunkin not only add to the atmosphere but also serve as cues for upcoming shifts in the music. Pay attention to changes in the background and character expressions—they often signal when the song is about to change its tone.</p>
-                </li>
-                <li>
-                    <h3>Embrace the Dark Turn:</h3>
-                    <p>When the music takes its spooky turn, the atmosphere and tempo may shift dramatically. Embrace these changes and stay calm under pressure—this is where the real challenge begins, and mastering it will feel incredibly rewarding.</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+        <!-- FAQ Section -->
+        <section class="bg-white py-16" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">FAQ: Everything You Need to Know About Sprunki FNF – Sprunkin</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What is Sprunki FNF – Sprunkin?</h3>
+                        <p class="text-gray-700">Sprunki FNF – Sprunkin is a fan-made mod for Friday Night Funkin' that introduces Sprunki, a lively character with a fun musical style. This mod offers new tracks and rhythm challenges, and you can play it directly online.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How does the Sprunki FNF – Sprunkin mod differ from other FNF mods?</h3>
+                        <p class="text-gray-700">This mod stands out by featuring original songs and a fresh character, Sprunki, who brings a playful yet challenging dynamic to the rhythm battles. The evolving difficulty keeps things exciting throughout each round.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Do I need to download Sprunki FNF – Sprunkin?</h3>
+                        <p class="text-gray-700">No! You can play Sprunki FNF – Sprunkin online without downloading or installing anything. The game runs directly in your browser for instant access.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Is Sprunki FNF – Sprunkin free to play?</h3>
+                        <p class="text-gray-700">Yes! Just like other FNF mods, Sprunki FNF – Sprunkin is completely free to download and play. You can find it on trusted mod websites and install it directly into your Friday Night Funkin' game.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="faq">
-        <div class="container">
-            <h2>FAQ: Everything You Need to Know About Sprunki FNF – Sprunkin</h2>
-            <div class="faq-item">
-                <h3>What is Sprunki FNF – Sprunkin?</h3>
-                <p>Sprunki FNF – Sprunkin is a fan-made mod for Friday Night Funkin' that introduces Sprunki, a lively character with a fun musical style. This mod offers new tracks and rhythm challenges, and you can play it directly online.</p>
+        <!-- Ready to Play Section -->
+        <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-20" id="ready-to-play">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6">Ready to Play Sprunki FNF – Sprunkin?</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Step into the world of Sprunki FNF – Sprunkin and test your rhythm skills in a fresh, exciting mod! There's no need to download or install anything—just click, play, and jump right into the fun. See if you can out-duel Sprunki in this one-of-a-kind rhythm battle. Play Sprunki FNF – Sprunkin online now and let the music take over!</p>
+                <a href="#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play Sprunki FNF – Sprunkin Now</a>
             </div>
-            <div class="faq-item">
-                <h3>How does the Sprunki FNF – Sprunkin mod differ from other FNF mods?</h3>
-                <p>This mod stands out by featuring original songs and a fresh character, Sprunki, who brings a playful yet challenging dynamic to the rhythm battles. The evolving difficulty keeps things exciting throughout each round.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Do I need to download Sprunki FNF – Sprunkin?</h3>
-                <p>No! You can play Sprunki FNF – Sprunkin online without downloading or installing anything. The game runs directly in your browser for instant access.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is Sprunki FNF – Sprunkin free to play?</h3>
-                <p>Yes! Just like other FNF mods, Sprunki FNF – Sprunkin is completely free to download and play. You can find it on trusted mod websites and install it directly into your Friday Night Funkin' game.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What are the main features of Sprunki FNF – Sprunkin?</h3>
-                <p>The mod introduces new songs, a unique character (Sprunki), and vibrant animations, all while retaining the core gameplay mechanics of Friday Night Funkin'. It's designed to offer a fresh challenge to both new and experienced FNF players.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is Sprunki FNF – Sprunkin available on mobile devices?</h3>
-                <p>At the moment, Sprunki FNF – Sprunkin is primarily available for PC. However, there are versions of Friday Night Funkin' available for mobile, and some fans have adapted mods for mobile play. Check with the mod developers for mobile compatibility.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I play Sprunki FNF  – Sprunkin with friends?</h3>
-                <p>While Sprunki FNF – Sprunkin doesn't have multiplayer functionality, you can share your scores and challenge friends to beat your performance. You can also record your battles and share them online with the Friday Night Funkin' community.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What makes Sprunki FNF – Sprunkin unique?</h3>
-                <p>The combination of Sprunki Incredibox characters, along with the dramatic tone shift mid-song, makes Sprunki FNF – Sprunkin a standout mod. The eerie atmosphere that takes over halfway through the battle adds an unexpected challenge that keeps players engaged and excited.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="sprunki-call-to-action">
-        <div class="container">
-            <h2>Ready to Play Sprunki FNF – Sprunkin?</h2>
-            <p>Step into the world of Sprunki FNF – Sprunkin and test your rhythm skills in a fresh, exciting mod! There's no need to download or install anything—just click, play, and jump right into the fun. See if you can out-duel Sprunki in this one-of-a-kind rhythm battle. Play Sprunki FNF – Sprunkin online now and let the music take over!</p>
-            <p style="text-align: center;margin-top: 30px;">
-                <a href="#play-now" class="cta-button">Play Sprunki FNF – Sprunkin Now</a>
-            </p>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox" class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
         </div>
-        <div class="container">
-            <p><a href="https://github.com/qiayue/SprunkiIncredibox" style="color:white;">Sprunki Incredibox Github</a></p>
-        </div>
-        <div class="language-selector">
-            <p>Choose your language:</p>
-            <ul>
-                <li><a href="../" hreflang="en">English</a></li>
-                <li><a href="../ko/" hreflang="ko">한국어</a></li>
-                <li><a href="../ru/" hreflang="ru">Русский</a></li>
-                <li><a href="../pt/" hreflang="pt">Português</a></li>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en" class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko" class="text-white hover:text-yellow-400 transition duration-300">한국어</a></li>
+                <li><a href="../ru/" hreflang="ru" class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt" class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
             </ul>
         </div>
     </footer>
- 
-    
+
     <script type="module">
         import { enterFullscreen, exitFullscreen, handleFullscreenChange, autoEnterFullscreen } from '../fullscreen.js';
+        import { renderRecommendedGames } from '../js/explore.js';
 
-        const gameContainer = document.querySelector('.game-container');
-        const gameIframe = document.getElementById('game-iframe');
         const fullscreenBtn = document.getElementById('fullscreen-btn');
         const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+        const gameContainer = document.querySelector('.game-container');
         const domainWatermark = document.getElementById('domain-watermark');
 
-        fullscreenBtn.addEventListener('click', () => enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
-        exitFullscreenBtn.addEventListener('click', () => exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
-        document.addEventListener('fullscreenchange', () => handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+        fullscreenBtn.addEventListener('click', () => {
+            enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
 
-        // 自动进入全屏模式（如果是移动设备且处于竖屏状态）
-        window.addEventListener('load', () => autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark));
+        exitFullscreenBtn.addEventListener('click', () => {
+            exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        window.addEventListener('load', () => {
+            autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+            renderRecommendedGames();
+        });
+
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        navSlide();
     </script>
     <div style="display:none">
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XQY73C38G"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-          gtag('config', 'G-2XQY73C38G');
+            gtag('config', 'G-2XQY73C38G');
         </script>
         <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
         <script>
-            document.onkeydown = function(e) {
+            document.onkeydown = function (e) {
                 if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === ' ') {
                     e.preventDefault();
                 }
@@ -246,4 +292,5 @@
         </script>
     </div>
 </body>
+
 </html>

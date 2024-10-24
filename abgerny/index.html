@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,204 +14,264 @@
     <link rel="canonical" href="https://sprunkiincredibox.com/abgerny/"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../tailwind.js"></script>
-    <link rel="stylesheet" href="../style.css?v=09301430">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
-     crossorigin="anonymous"></script>
-    <style type="text/css">
-        /* Existing styles... */
-    </style>
+    <link rel="stylesheet" href="../tailwind.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="../" class="flex center items-center"><i class="fas mr-2 fa-music hidden sm:block"></i> Sprunki Incredibox
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox</a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="../play/"><i class="fas fa-play"></i> Play Sprunki</a></li>
-                    <li><a href="../download/"><i class="fas fa-download"></i> Download</a></li>
-                    <li><a href="../neesterversal-v3-incredibox/" title="Play Neesterversal"><i class="fas fa-play"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/" title="Play Gray Sprunki"><i class="fas fa-play"></i> Gray Sprunki</a></li>
-                    <li><a href="../sprunki-oc/" title="Play Sprunki OC"><i class="fas fa-play"></i> Sprunki OC</a></li>
-                    <li><a href="../sprunki-characters/" title="Sprunki Characters"><i class="fas fa-users"></i> Characters</a></li>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Mod</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300" title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero mt-[70px]">
-        <div class="hero-content container">
-            <h1>Sprunki Abgerny – Explore New Sprunki Incredibox Mod</h1>
-            <h2 style="color:white;">Welcome to Sprunki Abgerny – A Unique Musical Journey Awaits!</h2>
-            <a href="#play-now" class="cta-button"><i class="fas fa-play"></i> Play Sprunki Abgerny Now</a>
-        </div>
-    </section>
+    <!-- 移动端导航菜单 -->
+    <div class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Mod</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
 
-    <section id="play-now" class="play-area">
-        <div class="container">
-            <h2>Play Sprunki Abgerny Now</h2>
-            <div class="game-container">
-                <iframe id="game-iframe" src="https://cocrea.world/embed/1844027359416598529?type=player" frameborder="0" width="100%" height="800px"></iframe>
-                <button id="fullscreen-btn" class="fullscreen-button">
-                    <i class="fas fa-expand"></i> Fullscreen
-                </button>
+    <main class="pt-14">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-red-700 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-6">Sprunki Abgerny – Explore New Sprunki Incredibox Mod</h1>
+                <h2 class="text-2xl mb-10">Welcome to Sprunki Abgerny – A Unique Musical Journey Awaits!</h2>
+                <a href="#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">
+                    <i class="fas fa-play mr-2"></i> Play Sprunki Abgerny Now
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-sprunki" id="about">
-        <div class="container">
-            <h2>Introduction: What is Sprunki Abgerny?</h2>
-            <p>Sprunki Abgerny is a fresh and engaging addition to the ever-evolving Incredibox universe. Known for its creative blend of music and character-driven gameplay, Sprunki Abgerny takes things a step further by introducing new characters, sounds, and unique music elements that push the boundaries of what you can create. Whether you're a seasoned Incredibox player or new to the series, Abgerny Incredibox offers a refreshing take on music creation, with an emphasis on experimentation, creativity, and fun. Dive into this colorful world and see how the Sprunki Abgerny mod breathes new life into the iconic Incredibox experience!</p>
-        </div>
-    </section>
+        <!-- Main Game Section with iframe -->
+        <section id="play-now" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Play Sprunki Abgerny Now</h2>
+                        <div class="game-container relative w-full max-w-4xl mx-auto">
+                            <iframe id="game-iframe" src="https://cocrea.world/embed/1844027359416598529?type=player" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                            <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                                <i class="fas fa-expand mr-2"></i> Fullscreen
+                            </button>
+                            <button id="exit-fullscreen-btn" class="fixed top-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm z-50 hidden">
+                                <i class="fas fa-compress mr-2"></i> Exit
+                            </button>
+                            <a href="https://sprunkiincredibox.com/" id="domain-watermark" class="absolute top-1/2 right-0 transform rotate-90 translate-y-[-50%] text-white hidden">SprunkiIncredibox.com</a>
+                        </div>
+                    </div>
 
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Features of Sprunki Abgerny</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Brand-New Characters:</h3>
-                    <p>The Sprunki Abgerny mod introduces a lineup of brand-new, vibrant characters, each with their own unique sounds and visual personalities. From deep, rumbling beats to airy melodies, every character plays a key role in helping you craft your musical masterpiece.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Fresh Sound Effects:</h3>
-                    <p>In Abgerny Incredibox, you'll find a collection of sound effects that stand out from the rest. These effects add new textures to your compositions, allowing you to mix sounds that you won't find in the standard Incredibox experience.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Interactive Visuals:</h3>
-                    <p>As you combine characters, the visuals shift and interact in real-time, giving a dynamic and engaging experience. These animations add a layer of visual storytelling to your music creation process, making the experience more immersive.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Bonus Unlocks:</h3>
-                    <p>Like all good mods, Sprunki Abgerny rewards creativity. Experiment with different character combinations to unlock secret bonuses and special animations that enhance both the visual and auditory aspects of your track.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works" id="how-to">
-        <div class="container">
-            <h2>How to Play Sprunki Abgerny</h2>
-            <div class="step-grid">
-                <div class="step-item">
-                    <h3>Choose Your Characters:</h3>
-                    <p>Begin your journey by selecting from the new characters introduced in the Sprunki Abgerny mod. Each character brings something unique to the table, whether it's a catchy beat, a whimsical melody, or a captivating effect.</p>
-                </div>
-                <div class="step-item">
-                    <h3>Drag and Drop:</h3>
-                    <p>As with other Incredibox mods, the drag-and-drop interface makes it easy to start mixing sounds. Simply drag your chosen characters into the sound slots, where they will start contributing to your track.</p>
-                </div>
-                <div class="step-item">
-                    <h3>Experiment with Sounds:</h3>
-                    <p>The real magic of Sprunki Abgerny lies in experimentation. Try combining different characters to create layers of beats, melodies, and effects. As you experiment, you may unlock secret bonuses that add new sounds and visuals to your track.</p>
-                </div>
-                <div class="step-item">
-                    <h3>Share Your Creation:</h3>
-                    <p>Once you've created a track you love, you can save it and share it with others. Whether it's with friends on social media or with the wider Incredibox community, your music is ready to impress!</p>
+                    <!-- Explore More Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Explore More</h2>
+                        <div id="recommended-games-container" class="grid grid-cols-2 gap-4"></div>
+                        <!-- JavaScript will populate this container -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="sprunki-tips">
-        <div class="container">
-            <h2>Tips and Tricks for Sprunki Abgerny</h2>
-            <ul class="tip-list">
-                <li><strong>Experiment Freely:</strong> Don't be afraid to try unusual combinations of characters. Sometimes, the most unexpected mixes can unlock hidden bonuses and create the most unique tracks.</li>
-                <li><strong>Use All Sound Elements:</strong> Incorporate beats, effects, and melodies evenly for a well-rounded track. Each element contributes something essential to the composition, so make sure you explore everything that Abgerny Incredibox has to offer.</li>
-                <li><strong>Pay Attention to Rhythm:</strong> Maintaining a solid rhythm can make your track feel more cohesive. Try to keep your beats in sync, even as you add layers of melodies and effects.</li>
-                <li><strong>Watch for Visual Cues:</strong> In Sprunki Abgerny, the characters' animations often provide visual cues that can help you figure out which combinations work well together. Pay attention to how characters react as you mix sounds.</li>
-            </ul>
-        </div>
-    </section>
+        <!-- Introduction Section -->
+        <section class="bg-white py-16" id="about">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Introduction: What is Sprunki Abgerny?</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">Sprunki Abgerny is a fresh and engaging addition to the ever-evolving Incredibox universe. Known for its creative blend of music and character-driven gameplay, Sprunki Abgerny takes things a step further by introducing new characters, sounds, and unique music elements that push the boundaries of what you can create. Whether you're a seasoned Incredibox player or new to the series, Abgerny Incredibox offers a refreshing take on music creation, with an emphasis on experimentation, creativity, and fun. Dive into this colorful world and see how the Sprunki Abgerny mod breathes new life into the iconic Incredibox experience!</p>
+            </div>
+        </section>
 
-    <section class="faq">
-        <div class="container">
-            <h2>FAQ: All You Need to Know About Sprunki Abgerny</h2>
-            <div class="faq-item">
-                <p class="faq-question">Q: What is Sprunki Abgerny?</p>
-                <p>A: Sprunki Abgerny is a fan-made mod of the Incredibox game that introduces new characters, sounds, and interactive visuals. The mod allows players to experiment with unique music compositions while enjoying fresh animations and sound effects.</p>
+        <!-- Features Section -->
+        <section class="bg-gradient-to-b from-gray-200 to-white py-16" id="features">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Features of Sprunki Abgerny</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Brand-New Characters:</h3>
+                        <p class="text-gray-600">The Sprunki Abgerny mod introduces a lineup of brand-new, vibrant characters, each with their own unique sounds and visual personalities. From deep, rumbling beats to airy melodies, every character plays a key role in helping you craft your musical masterpiece.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Fresh Sound Effects:</h3>
+                        <p class="text-gray-600">In Abgerny Incredibox, you'll find a collection of sound effects that stand out from the rest. These effects add new textures to your compositions, allowing you to mix sounds that you won't find in the standard Incredibox experience.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Interactive Visuals:</h3>
+                        <p class="text-gray-600">As you combine characters, the visuals shift and interact in real-time, giving a dynamic and engaging experience. These animations add a layer of visual storytelling to your music creation process, making the experience more immersive.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Bonus Unlocks:</h3>
+                        <p class="text-gray-600">Like all good mods, Sprunki Abgerny rewards creativity. Experiment with different character combinations to unlock secret bonuses and special animations that enhance both the visual and auditory aspects of your track.</p>
+                    </div>
+                </div>
             </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: How is Sprunki Abgerny different from the original Incredibox?</p>
-                <p>A: While the core gameplay of dragging and dropping characters to create music remains the same, Sprunki Abgerny features a new lineup of characters and sound elements, offering a distinct music-making experience compared to the original Incredibox.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Is Sprunki Abgerny free to play?</p>
-                <p>A: Yes, Sprunki Abgerny is available to play for free, just like other fan-made Incredibox mods. Simply visit the official website, and you can start creating music without any downloads or purchases.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Can I play Sprunki Abgerny on mobile devices?</p>
-                <p>A: Yes, Abgerny Incredibox is optimized for both desktop and mobile devices, making it easy to enjoy the mod on the go.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Are there any in-game bonuses?</p>
-                <p>A: Yes! Sprunki Abgerny rewards experimentation. By combining certain characters in creative ways, you can unlock hidden bonuses and special animations that enhance both the visual and auditory aspects of your track.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: What makes Sprunki Abgerny unique?</p>
-                <p>A: The Sprunki Abgerny mod introduces characters and sound effects not found in the original Incredibox, making it a standout experience for both new players and long-time fans. The combination of new sounds, interactive visuals, and special bonuses offers a truly unique music-making adventure.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Are there any special characters exclusive to Sprunki Abgerny?</p>
-                <p>A: Yes, Sprunki Abgerny introduces exclusive characters that aren't available in the original Incredibox. These characters bring fresh sounds and unique visual animations to enhance your music-making experience.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Can I collaborate with others in Sprunki Abgerny?</p>
-                <p>A: While Sprunki Abgerny does not offer real-time multiplayer, players often collaborate by sharing tracks and discussing creative approaches within the Incredibox community. You can exchange ideas and remix each other's compositions.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Is Sprunki Abgerny regularly updated?</p>
-                <p>A: The Sprunki Abgerny mod is community-driven, and updates can include new characters, sounds, and effects based on player feedback. This keeps the game fresh and full of surprises.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="sprunki-call-to-action">
-        <div class="container">
-            <h2>Ready to Start Your Sprunki Abgerny Journey?</h2>
-            <p>Dive into Sprunki Abgerny and create your own musical masterpieces today! Whether you're new to the world of Incredibox or a seasoned pro, this mod offers endless possibilities for creative expression. Play Sprunki Abgerny now and start mixing beats, melodies, and effects in ways you've never experienced before. The best part? It's completely free, so jump in and let your musical journey begin!</p>
-            <p style="text-align: center;margin-top: 30px;">
-                <a href="#play-now" class="cta-button">Play Sprunki Abgerny Now</a>
-            </p>
-        </div>
-    </section>
+        <!-- How to Play Section -->
+        <section class="bg-white py-16" id="how-to">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Play Sprunki Abgerny</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Choose Your Characters:</h3>
+                        <p class="text-gray-700">Begin your journey by selecting from the new characters introduced in the Sprunki Abgerny mod. Each character brings something unique to the table, whether it's a catchy beat, a whimsical melody, or a captivating effect.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Drag and Drop:</h3>
+                        <p class="text-gray-700">As with other Incredibox mods, the drag-and-drop interface makes it easy to start mixing sounds. Simply drag your chosen characters into the sound slots, where they will start contributing to your track.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Experiment with Sounds:</h3>
+                        <p class="text-gray-700">The real magic of Sprunki Abgerny lies in experimentation. Try combining different characters to create layers of beats, melodies, and effects. As you experiment, you may unlock secret bonuses that add new sounds and visuals to your track.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Share Your Creation:</h3>
+                        <p class="text-gray-700">Once you've created a track you love, you can save it and share it with others. Whether it's with friends on social media or with the wider Incredibox community, your music is ready to impress!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        <!-- Tips Section -->
+        <section class="bg-gradient-to-b from-white to-gray-100 py-16" id="tips">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Tips and Tricks for Sprunki Abgerny</h2>
+                <ul class="space-y-6 max-w-3xl mx-auto">
+                    <li class="bg-white p-6 rounded-xl shadow-md">
+                        <strong class="text-red-700">Experiment Freely:</strong> Don't be afraid to try unusual combinations of characters. Sometimes, the most unexpected mixes can unlock hidden bonuses and create the most unique tracks.
+                    </li>
+                    <li class="bg-white p-6 rounded-xl shadow-md">
+                        <strong class="text-red-700">Use All Sound Elements:</strong> Incorporate beats, effects, and melodies evenly for a well-rounded track. Each element contributes something essential to the composition, so make sure you explore everything that Abgerny Incredibox has to offer.
+                    </li>
+                    <li class="bg-white p-6 rounded-xl shadow-md">
+                        <strong class="text-red-700">Pay Attention to Rhythm:</strong> Maintaining a solid rhythm can make your track feel more cohesive. Try to keep your beats in sync, even as you add layers of melodies and effects.
+                    </li>
+                    <li class="bg-white p-6 rounded-xl shadow-md">
+                        <strong class="text-red-700">Watch for Visual Cues:</strong> In Sprunki Abgerny, the characters' animations often provide visual cues that can help you figure out which combinations work well together. Pay attention to how characters react as you mix sounds.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white py-16" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">FAQ: All You Need to Know About Sprunki Abgerny</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: What is Sprunki Abgerny?</h3>
+                        <p class="text-gray-700">A: Sprunki Abgerny is a fan-made mod of the Incredibox game that introduces new characters, sounds, and interactive visuals. The mod allows players to experiment with unique music compositions while enjoying fresh animations and sound effects.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: How is Sprunki Abgerny different from the original Incredibox?</h3>
+                        <p class="text-gray-700">A: While the core gameplay of dragging and dropping characters to create music remains the same, Sprunki Abgerny features a new lineup of characters and sound elements, offering a distinct music-making experience compared to the original Incredibox.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: Is Sprunki Abgerny free to play?</h3>
+                        <p class="text-gray-700">A: Yes, Sprunki Abgerny is available to play for free, just like other fan-made Incredibox mods. Simply visit the official website, and you can start creating music without any downloads or purchases.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: Can I play Sprunki Abgerny on mobile devices?</h3>
+                        <p class="text-gray-700">A: Yes, Abgerny Incredibox is optimized for both desktop and mobile devices, making it easy to enjoy the mod on the go.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: Are there any in-game bonuses?</h3>
+                        <p class="text-gray-700">A: Yes! Sprunki Abgerny rewards experimentation. By combining certain characters in creative ways, you can unlock hidden bonuses and special animations that enhance both the visual and auditory aspects of your track.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-20" id="cta">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6">Ready to Start Your Sprunki Abgerny Journey?</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Dive into Sprunki Abgerny and create your own musical masterpieces today! Whether you're new to the world of Incredibox or a seasoned pro, this mod offers endless possibilities for creative expression. Play Sprunki Abgerny now and start mixing beats, melodies, and effects in ways you've never experienced before. The best part? It's completely free, so jump in and let your musical journey begin!</p>
+                <a href="#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play Sprunki Abgerny Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
         </div>
-        <div class="container">
-            <p><a href="https://github.com/qiayue/SprunkiIncredibox" style="color:white;">Sprunki Incredibox Github</a></p>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox" class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
         </div>
-        <div class="language-selector">
-            <p>Choose your language:</p>
-            <ul>
-                <li><a href="../" hreflang="en">English</a></li>
-                <li><a href="../ko/" hreflang="ko">한국어</a></li>
-                <li><a href="../ru/" hreflang="ru">Русский</a></li>
-                <li><a href="../pt/" hreflang="pt">Português</a></li>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en" class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko" class="text-white hover:text-yellow-400 transition duration-300">한국어</a></li>
+                <li><a href="../ru/" hreflang="ru" class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt" class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
             </ul>
         </div>
     </footer>
 
-    
-    <script>
+    <script type="module">
+        import { enterFullscreen, exitFullscreen, handleFullscreenChange, autoEnterFullscreen } from '../fullscreen.js';
+        import { renderRecommendedGames } from '../js/explore.js';
+
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+        const gameContainer = document.querySelector('.game-container');
+        const domainWatermark = document.getElementById('domain-watermark');
+
+        fullscreenBtn.addEventListener('click', () => {
+            enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        exitFullscreenBtn.addEventListener('click', () => {
+            exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('webkitfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('mozfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('MSFullscreenChange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        window.addEventListener('load', () => {
+            autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+            renderRecommendedGames();
+        });
+
         const navSlide = () => {
             const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links li');
-            
+            const nav = document.querySelector('.mobile-nav');
+            const navLinks = document.querySelectorAll('.mobile-nav li');
+
             burger.addEventListener('click', () => {
-                nav.classList.toggle('nav-active');
-                
+                nav.classList.toggle('transform');
+                nav.classList.toggle('-translate-x-full');
+
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';
@@ -218,40 +279,25 @@
                         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                     }
                 });
-                
+
                 burger.classList.toggle('toggle');
             });
         }
 
         navSlide();
-
-        // 添加全屏功能
-        const fullscreenBtn = document.getElementById('fullscreen-btn');
-        const gameIframe = document.getElementById('game-iframe');
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (gameIframe.requestFullscreen) {
-                gameIframe.requestFullscreen();
-            } else if (gameIframe.mozRequestFullScreen) { // Firefox
-                gameIframe.mozRequestFullScreen();
-            } else if (gameIframe.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
-                gameIframe.webkitRequestFullscreen();
-            } else if (gameIframe.msRequestFullscreen) { // IE/Edge
-                gameIframe.msRequestFullscreen();
-            }
-        });
     </script>
     <div style="display:none">
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XQY73C38G"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-          gtag('config', 'G-2XQY73C38G');
+            gtag('config', 'G-2XQY73C38G');
         </script>
         <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
     </div>
 </body>
+
 </html>

@@ -14,326 +14,230 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="http://sprunkiincredibox.com/sprunki-oc/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../style.css?v=09301430">
     <script src="../tailwind.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
         crossorigin="anonymous"></script>
-    <style type="text/css">
-        .related-games {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
-
-        .game-card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .game-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .game-card h3 {
-            padding: 15px 15px 5px;
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .game-card p {
-            padding: 0 15px 15px;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .where-to-play .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .where-to-play .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-        }
-    </style>
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <nav>
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="../"><i class="fas fa-music"></i> Sprunki Incredibox</a>
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox</a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="../#play-now"><i class="fas fa-play"></i> Play Sprunki</a></li>
-                    <li><a href="../neesterversal-v3-incredibox/"><i class="fas fa-play"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/"><i class="fas fa-play"></i> Gray Sprunki</a></li>
-                    <li><a href="./#play-now"><i class="fas fa-play"></i> Sprunki OC</a></li>
-                    <li><a href="../sprunki-characters/"><i class="fas fa-users"></i> Characters</a></li>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="#play-now" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-play mr-1"></i> Mod</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"
+                            title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content container">
-            <h1>Sprunki OC: Use Original Characters to Play Sprunki Incredibox</h1>
-            <p>Create unique beats with community-designed characters in this exciting Incredibox mod!</p>
-            <a href="#play-now" class="cta-button"><i class="fas fa-play"></i> Play Sprunki OC Now</a>
-        </div>
-    </section>
+    <!-- 移动端导航菜单 -->
+    <div
+        class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="#play-now" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i>
+                    Mod</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
 
-    <section id="play-now" class="play-area">
-        <div class="container">
-            <h2>Play Sprunki OC Now</h2>
-            <div class="game-container">
-                <a href="https://picrew.me/en/image_maker/2513920" class="game-link" target="_blank">
-                    <img src="./sprunki-oc.png" alt="Sprunki OC Game Screenshot" class="game-image"
-                        style="max-height: 300px; width: auto; display: block; margin: 0 auto;">
+    <main class="pt-14">
+        <section class="hero bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-6">Sprunki OC: Use Original Characters to Play Sprunki Incredibox</h1>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Create unique beats with community-designed characters in this exciting Incredibox mod!</p>
+                <a href="#play-now"
+                    class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">
+                    <i class="fas fa-play mr-2"></i> Play Sprunki OC Now
                 </a>
-                <div class="play-overlay w-full flex" style="justify-content: center;">
-                    <a href="https://picrew.me/en/image_maker/2513920" class="play-button" target="_blank"
-                        style="display: block; text-align: center; margin-top: 20px; padding: 15px 30px; background-color: #f49d11; color: white; border-radius: 5px; text-decoration: none; width: 250px; font-size: 18px;">
-                        Start Game
-                    </a>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about-sprunki" id="about">
-        <div class="container">
-            <h2>What is Sprunki OC?</h2>
-            <p>Sprunki OC is a fan-made mod within the Incredibox universe that offers a fresh take on music creation
-                with an emphasis on originality and unique characters. Sprunki OC allows players to craft one-of-a-kind
-                beats by combining character-driven soundscapes, making it perfect for those who want to push the
-                boundaries of their musical creativity.</p>
-            <p>This mod, known as Sprunki Incredibox OC, takes the base mechanics of Incredibox and builds on them with
-                distinctive new characters and visual elements, offering players an elevated and personalized music
-                experience.</p>
-        </div>
-    </section>
+        <!-- Main Game Section with iframe -->
+        <section id="play-now" class="bg-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Play Sprunki OC Now</h2>
+                        <div class="game-container relative w-full max-w-4xl mx-auto">
+                            <a href="https://picrew.me/en/image_maker/2513920" class="flex justify-center" target="_blank">
+                                <img src="./sprunki-oc.png" alt="Sprunki OC Game Screenshot" class="w-[400px] h-auto rounded-lg shadow-2xl">
+                            </a>
+                            <div class="play-overlay w-full flex justify-center mt-4">
+                                <a href="https://picrew.me/en/image_maker/2513920" 
+                                   class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1"
+                                   target="_blank">
+                                    Start Game
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Why We Recommend Sprunki OC</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Custom Characters and Sounds</h3>
-                    <p>Sprunki OC brings an entirely fresh perspective to the Incredibox experience by introducing
-                        Original Characters (OCs) created by the community. Each character in Sprunki Incredibox OC has
-                        a unique sound and design, giving you endless possibilities for creating mixes that reflect your
-                        personal taste. Whether you're into heavy beats, quirky melodies, or atmospheric effects,
-                        Sprunki OC has something for everyone.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Engage with a Creative Community</h3>
-                    <p>The community-driven nature of Sprunki OC encourages collaboration and creativity. Users can not
-                        only create their own music but also share their OC designs and mixes with the broader
-                        Incredibox community. Sprunki OC players often get involved in discussions about new character
-                        ideas and sound combinations, making it more than just a game—it's a platform for musical and
-                        artistic expression.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎵</div>
-                    <h3>Unlimited Combinations for Endless Fun</h3>
-                    <p>One of the standout features of Sprunki Incredibox OC is the freedom it gives players to
-                        experiment. By blending sounds from a wide variety of characters, you can craft mixes that range
-                        from high-energy dance tracks to mellow, chilled-out tunes. The possibilities are truly endless,
-                        making every session fresh and exciting.</p>
+                    <!-- Explore More Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-8 text-red-800">Explore More</h2>
+                        <div id="recommended-games-container" class="grid grid-cols-2 gap-4"></div>
+                        <!-- JavaScript will populate this container -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="how-it-works" id="how-to">
-        <div class="container">
-            <h2>How to Play Sprunki OC</h2>
-            <div class="step-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>Choose Your OC</h3>
-                    <p>Start by selecting your favorite Sprunki OC characters from the available lineup. Each character
-                        brings its own distinct sound—whether it's a beat, melody, or effect—and together, they create
-                        the building blocks of your track.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>Drag and Drop to Create Music</h3>
-                    <p>Sprunki OC maintains the familiar drag-and-drop interface from Incredibox. Drag characters into
-                        the sound slots and begin experimenting with different combinations. Each combination unlocks a
-                        different sound mix, and the more characters you use, the more layered and dynamic your music
-                        becomes.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>Unlock Special Bonuses</h3>
-                    <p>As you experiment with sound combinations, you'll unlock hidden bonuses. These bonuses not only
-                        add visual flair but also enhance your audio track, offering a satisfying reward for your
-                        creative efforts.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h3>Share and Download Your Mix</h3>
-                    <p>Once you're satisfied with your composition, you can share it with friends, post it on social
-                        media, or download it for later listening. The game also encourages players to engage with the
-                        broader Sprunki Incredibox OC community by sharing their OCs and mixes for feedback and
-                        inspiration.</p>
+        <section class="about-sprunki bg-white py-16" id="about">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8 text-red-800">What is Sprunki OC?</h2>
+                <p class="text-xl text-center mb-6 text-gray-600 max-w-3xl mx-auto">Sprunki OC is a fan-made mod within the Incredibox universe that offers a fresh take on music creation with an emphasis on originality and unique characters. Sprunki OC allows players to craft one-of-a-kind beats by combining character-driven soundscapes, making it perfect for those who want to push the boundaries of their musical creativity.</p>
+                <p class="text-xl text-center mb-6 text-gray-600 max-w-3xl mx-auto">This mod, known as Sprunki Incredibox OC, takes the base mechanics of Incredibox and builds on them with distinctive new characters and visual elements, offering players an elevated and personalized music experience.</p>
+            </div>
+        </section>
+
+        <section class="features bg-gradient-to-b from-gray-100 to-white py-16" id="features">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Why We Recommend Sprunki OC</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🎨</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Custom Characters and Sounds</h3>
+                        <p class="text-gray-600">Sprunki OC brings an entirely fresh perspective to the Incredibox experience by introducing Original Characters (OCs) created by the community. Each character in Sprunki Incredibox OC has a unique sound and design, giving you endless possibilities for creating mixes that reflect your personal taste.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🤝</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Engage with a Creative Community</h3>
+                        <p class="text-gray-600">The community-driven nature of Sprunki OC encourages collaboration and creativity. Users can not only create their own music but also share their OC designs and mixes with the broader Incredibox community.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🎵</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Unlimited Combinations for Endless Fun</h3>
+                        <p class="text-gray-600">One of the standout features of Sprunki Incredibox OC is the freedom it gives players to experiment. By blending sounds from a wide variety of characters, you can craft mixes that range from high-energy dance tracks to mellow, chilled-out tunes.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="faq">
-        <div class="container">
-            <h2>FAQs about Sprunki OC</h2>
-            <div class="faq-item">
-                <p class="faq-question">Q: What is Sprunki OC?</p>
-                <p>A: Sprunki OC is a fan-made mod of Incredibox that features original characters (OCs) and unique
-                    sounds created by the community. The game operates on the same drag-and-drop mechanics as the
-                    original Incredibox but introduces new visual elements and character designs for a personalized
-                    experience.</p>
+        <section class="how-it-works bg-white py-16" id="how-to">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Play Sprunki OC</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">1</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Choose Your OC</h3>
+                        <p class="text-gray-700">Start by selecting your favorite Sprunki OC characters from the available lineup. Each character brings its own distinct sound—whether it's a beat, melody, or effect—and together, they create the building blocks of your track.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">2</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Drag and Drop to Create Music</h3>
+                        <p class="text-gray-700">Sprunki OC maintains the familiar drag-and-drop interface from Incredibox. Drag characters into the sound slots and begin experimenting with different combinations. Each combination unlocks a different sound mix, and the more characters you use, the more layered and dynamic your music becomes.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">3</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Unlock Special Bonuses</h3>
+                        <p class="text-gray-700">As you experiment with sound combinations, you'll unlock hidden bonuses. These bonuses not only add visual flair but also enhance your audio track, offering a satisfying reward for your creative efforts.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">4</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Share and Download Your Mix</h3>
+                        <p class="text-gray-700">Once you're satisfied with your composition, you can share it with friends, post it on social media, or download it for later listening. The game also encourages players to engage with the broader Sprunki Incredibox OC community by sharing their OCs and mixes for feedback and inspiration.</p>
+                    </div>
+                </div>
             </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: How is Sprunki OC different from other Incredibox mods?</p>
-                <p>A: Unlike other mods, Sprunki OC focuses on original characters and user-created content. Players can
-                    submit their own character designs and sound elements, making this mod highly customizable and
-                    creative. Sprunki OC is also known for its strong community involvement, with players actively
-                    contributing to its development.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Can I play Sprunki OC for free?</p>
-                <p>A: Yes, Sprunki OC is free to play. Like other Incredibox mods, it can be accessed directly through
-                    your browser without any download fees. You can start playing and creating music with OCs
-                    immediately, making it accessible to all.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Is Sprunki OC suitable for beginners?</p>
-                <p>A: Absolutely! Sprunki OC is designed to be intuitive and easy for beginners to pick up. Whether
-                    you've never created music before or are a seasoned player of Incredibox, the game's interface
-                    allows anyone to start experimenting with sounds and creating tracks in minutes.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: How do I share my Sprunki OC creations?</p>
-                <p>A: Once you've crafted your perfect mix, Sprunki OC allows you to share your music directly via
-                    social media or download the track to enjoy offline. You can also share your creations within the
-                    Sprunki OC community, where users can give feedback and collaborate.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: What makes Sprunki OC characters unique?</p>
-                <p>A: Each Sprunki OC character is designed by community members and represents a unique sound element.
-                    The diversity of character designs and sounds means that every mix you create will have its own
-                    flavor, reflecting the creativity of the community behind the mod.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Are there any in-game purchases in Sprunki OC?</p>
-                <p>A: No, Sprunki OC does not include in-game purchases. The mod is entirely free, and players have full
-                    access to all characters, sounds, and features without the need for microtransactions.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: How often is Sprunki OC updated?</p>
-                <p>A: Sprunki OC is a community-driven project, so updates are released periodically based on new
-                    submissions from the community. Players can expect fresh content and new characters to be added
-                    regularly, keeping the gameplay experience dynamic and exciting.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Can I submit my own characters to Sprunki OC?</p>
-                <p>A: Yes! One of the most exciting features of Sprunki OC is its community involvement. Players can
-                    submit their own original characters (OCs) and sound elements, contributing to the ever-growing
-                    library of characters in the game.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Is Sprunki OC available on mobile devices?</p>
-                <p>A: Yes, Sprunki OC is optimized for both desktop and mobile play. You can enjoy the same
-                    drag-and-drop mechanics and creative music-making experience on your phone or tablet, making it
-                    perfect for on-the-go gameplay.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Q: Are there any hidden bonuses in Sprunki OC?</p>
-                <p>A: Yes, players can unlock hidden bonuses by finding unique combinations of characters and sounds.
-                    These bonuses often trigger special animations and enhance the overall mix, adding an extra layer of
-                    fun to the creative process.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="where-to-play">
-        <div class="container">
-            <h2>Where can I play Sprunki OC?</h2>
-            <p>You can play Sprunki OC directly right here. No downloads are required, and you can start crafting your
-                own music immediately in your browser.</p>
-            <div class="button-container">
-                <a href="#play-now" class="cta-button">Play Sprunki OC Now</a>
+        <section class="faq bg-gradient-to-b from-white to-gray-100 py-16" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">FAQs about Sprunki OC</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: What is Sprunki OC?</h3>
+                        <p class="text-gray-600">A: Sprunki OC is a fan-made mod of Incredibox that features original characters (OCs) and unique sounds created by the community. The game operates on the same drag-and-drop mechanics as the original Incredibox but introduces new visual elements and character designs for a personalized experience.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: How is Sprunki OC different from other Incredibox mods?</h3>
+                        <p class="text-gray-600">A: Unlike other mods, Sprunki OC focuses on original characters and user-created content. Players can submit their own character designs and sound elements, making this mod highly customizable and creative. Sprunki OC is also known for its strong community involvement, with players actively contributing to its development.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Q: Can I play Sprunki OC for free?</h3>
+                        <p class="text-gray-600">A: Yes, Sprunki OC is free to play. Like other Incredibox mods, it can be accessed directly through your browser without any download fees. You can start playing and creating music with OCs immediately, making it accessible to all.</p>
+                    </div>
+                    <!-- Add more FAQ items here -->
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="sprunki-call-to-action">
-        <div class="container">
-            <h2>Join the Sprunki OC Community Today!</h2>
-            <p>Start creating your own musical masterpieces with Sprunki OC now. Whether you're new to music production
-                or a seasoned Incredibox player, Sprunki OC offers a fresh, creative platform to explore sound in an
-                entirely new way. Ready to bring your OC to life? Play Sprunki Incredibox OC today and share your
-                creations with a vibrant, welcoming community.</p>
-            <p style="text-align: center;margin-top: 30px;">
-                <a href="#play-now" class="cta-button">Get Started Now</a>
-            </p>
-        </div>
-    </section>
+        <section class="where-to-play bg-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-8 text-red-800">Where can I play Sprunki OC?</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">You can play Sprunki OC directly right here. No downloads are required, and you can start crafting your own music immediately in your browser.</p>
+                <a href="#play-now"
+                    class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play Sprunki OC Now</a>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
+        <section class="sprunki-call-to-action bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6">Join the Sprunki OC Community Today!</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Start creating your own musical masterpieces with Sprunki OC now. Whether you're new to music production or a seasoned Incredibox player, Sprunki OC offers a fresh, creative platform to explore sound in an entirely new way. Ready to bring your OC to life?</p>
+                <a href="#play-now"
+                    class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
         </div>
-        <div class="container">
-            <p><a href="https://github.com/qiayue/SprunkiIncredibox" style="color:white;">Sprunki Incredibox Github</a>
-            </p>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox"
+                    class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
         </div>
-        <div class="language-selector">
-            <p>Choose your language:</p>
-            <ul>
-                <li><a href="../" hreflang="en">English</a></li>
-                <li><a href="../ko/" hreflang="ko">한국어</a></li>
-                <li><a href="../ru/" hreflang="ru">Русский</a></li>
-                <li><a href="../pt/" hreflang="pt">Português</a></li>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en"
+                        class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko"
+                        class="text-white hover:text-yellow-400 transition duration-300">한국어</a></li>
+                <li><a href="../ru/" hreflang="ru"
+                        class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt"
+                        class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
             </ul>
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        import { renderRecommendedGames } from '../js/explore.js';
+        document.addEventListener('DOMContentLoaded', renderRecommendedGames);
+
         const navSlide = () => {
             const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links li');
+            const nav = document.querySelector('.mobile-nav');
+            const navLinks = document.querySelectorAll('.mobile-nav li');
 
             burger.addEventListener('click', () => {
-                nav.classList.toggle('nav-active');
+                nav.classList.toggle('transform');
+                nav.classList.toggle('-translate-x-full');
 
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
@@ -353,11 +257,11 @@
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XQY73C38G"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-          gtag('config', 'G-2XQY73C38G');
+            gtag('config', 'G-2XQY73C38G');
         </script>
         <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
     </div>

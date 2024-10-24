@@ -55,6 +55,13 @@ const recommendedGames = [
         alt: "Sprunki fnf",
         title: "Sprunki FNF",
         description: "Friday Night Funkin'!"
+    },
+    {
+        href: "../remastered/",
+        imgSrc: "../img/remastered.webp",
+        alt: "Sprunki remastered",
+        title: "Sprunki remastered",
+        description: "Experience the remastered Friday Night Funkin'!"
     }
 ];
 
