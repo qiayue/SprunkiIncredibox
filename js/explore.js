@@ -29,11 +29,11 @@ const recommendedGames = [
         description: "Original characters!"
     },
     {
-        href: "../sprunki-characters/",
-        imgSrc: "../img/sprunki-characters.png",
-        alt: "Sprunki Characters",
-        title: "Sprunki Characters",
-        description: "Meet the quirky cast!"
+        href: "../sprunked/",
+        imgSrc: "../img/sprunked.jpg",
+        alt: "Sprunked",
+        title: "Sprunked",
+        description: "Explore the unique cast!"
     },
     {
         href: "../dandys-world/",

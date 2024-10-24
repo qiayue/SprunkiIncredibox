@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Sprunked – Play Sprunki Sprunked Online on Sprunki Incredibox</title>
+    <meta name="description" content="Play Sprunked, a unique Sprunki Incredibox mod. Create music with innovative gameplay —play instantly online for free.">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://s.sprunkiincredibox.com/img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://s.sprunkiincredibox.com/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://s.sprunkiincredibox.com/img/icon/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="canonical" href="https://sprunkiincredibox.com/sprunked/" />
+    <script src="../tailwind.js"></script>
+    <link rel="stylesheet" href="../tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- PWA相关meta标签 -->
+    <meta name="theme-color" content="#FF0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Sprunki Incredibox">
+</head>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
+                <div class="logo">
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox</a>
+                </div>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="#play-now" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-play mr-1"></i> Play Sprunked</a></li>
+                    <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-play mr-1"></i> Mod</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
+                                class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"
+                            title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
+                </ul>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 移动端导航菜单 -->
+    <div
+        class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="#play-now" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-play mr-2"></i> Play Sprunked</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i>
+                    Mod</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i
+                        class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
+
+    <main class="pt-16">
+        <!-- Main Game Section with iframe -->
+        <section id="play-now" class="bg-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h1 class="text-4xl font-bold text-center mb-4 text-red-800">Sprunked – Explore Sprunki Sprunked Incredibox Mod</h1>
+                        <h2 class="text-2xl font-semibold text-center mb-8 text-gray-700">Welcome to Sprunked – Discover the Latest Sprunki Incredibox Mod</h2>
+                        <div class="game-container relative w-full max-w-4xl mx-auto">
+                            <iframe id="game-iframe" src="https://scratch.mit.edu/projects/1083603932/embed"
+                                frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                            <button id="fullscreen-btn"
+                                class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                                <i class="fas fa-expand mr-2"></i> Fullscreen
+                            </button>
+                            <button id="exit-fullscreen-btn"
+                                class="fixed top-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm z-50 hidden">
+                                <i class="fas fa-compress mr-2"></i> Exit
+                            </button>
+                            <a href="https://sprunkiincredibox.com/" id="domain-watermark"
+                                class="absolute top-1/2 right-0 transform rotate-90 translate-y-[-50%] text-white hidden">SprunkiIncredibox.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Explore More Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-20 text-red-800">Explore More</h2>
+                        <div id="recommended-games-container" class="grid grid-cols-2 gap-4"></div>
+                        <!-- JavaScript will populate this container -->
+                    </div>
+                    <script type="module">
+                        import { renderRecommendedGames } from '../js/explore.js';
+                        document.addEventListener('DOMContentLoaded', renderRecommendedGames);
+                    </script>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- What is Sprunked Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-8 text-red-800 flex items-center justify-center">
+                    <i class="fas fa-question-circle text-yellow-400 mr-4"></i>
+                    What is Sprunked
+                </h2>
+                <p class="text-xl text-gray-700 mb-6">
+                    Sprunked is an exciting Incredibox mod that redefines the way players engage with music creation. By introducing scratch-based gameplay, Sprunked allows you to interact with the sound elements in a fresh, engaging way. The game combines creativity, innovation, and fun with its diverse array of characters, each contributing unique audio elements to your compositions. Whether you're scratching your screen to uncover hidden sound effects or experimenting with the beats created by guest artists like YoungScoller and KagiMusic, Sprunked takes the music-making experience to the next level.
+                </p>
+                <p class="text-xl text-gray-700">
+                    Developed by @nonnie0474 on the cocrea.world platform, Sprunked builds on the success of mods like Sprunki while introducing new characters, features, and modes, including the fan-favorite horror mod. This mod opens up endless creative possibilities, allowing players to craft their own dynamic compositions and share them with the vibrant Sprunked community.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800 flex items-center justify-center">
+                    <i class="fas fa-star text-yellow-400 mr-4"></i>
+                    Features of Sprunked
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700 flex items-center">
+                            <i class="fas fa-hand-pointer text-yellow-400 mr-3"></i>
+                            Scratch-Based Gameplay
+                        </h3>
+                        <p class="text-gray-700">Sprunked introduces an innovative gameplay mechanic where players scratch the screen to reveal hidden sound effects. This interactive feature sets it apart from other Incredibox mods, creating a more tactile and engaging experience.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700 flex items-center">
+                            <i class="fas fa-users text-yellow-400 mr-3"></i>
+                            Unique Characters and Sounds
+                        </h3>
+                        <p class="text-gray-700">The whimsical characters in Sprunked bring a wide variety of sound elements to the table. Each character has its own distinct audio contribution, allowing players to layer beats, melodies, and effects in endless combinations for dynamic musical compositions.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700 flex items-center">
+                            <i class="fas fa-music text-yellow-400 mr-3"></i>
+                            Collaborative Music Creation
+                        </h3>
+                        <p class="text-gray-700">Sprunked features contributions from artists like YoungScoller and KagiMusic, bringing fresh sounds and beats into the game. Players can experiment with these elements to create unique tracks and explore new styles of music.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700 flex items-center">
+                            <i class="fas fa-mobile-alt text-yellow-400 mr-3"></i>
+                            Instant Play Across Devices
+                        </h3>
+                        <p class="text-gray-700">Sprunked is optimized for browser play on both PC and mobile devices, making it accessible without the need for downloads or installations. Whether you're at home or on the go, you can jump into the game and start creating music in seconds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800 flex items-center justify-center">
+                    <i class="fas fa-gamepad text-yellow-400 mr-4"></i>
+                    How to Play Sprunked
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Play Instantly Online</h3>
+                        <p class="text-gray-700">To get started with Sprunked, simply visit the game on your browser. No downloads or installations are necessary, and you can play directly from your PC or mobile device. The game is designed for quick access, allowing you to start creating music immediately.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Scratch to Reveal Sounds</h3>
+                        <p class="text-gray-700">In Sprunked, the core gameplay revolves around scratching the screen to uncover hidden sound effects. This adds a layer of interactivity to the standard rhythm-based gameplay, letting you engage with the music in a new and exciting way.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Choose Your Characters and Beats</h3>
+                        <p class="text-gray-700">Once you start the game, you can select from a variety of characters, each contributing unique beats, melodies, or effects. Mix and match these characters to craft your own rhythms and experiment with different musical styles.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Experiment with horror mod</h3>
+                        <p class="text-gray-700">For players looking for something different, horror mod offers a darker, more atmospheric experience. Activate this mode to explore haunting soundscapes and eerie visuals that add a fresh twist to your musical creations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips and Tricks Section -->
+        <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800 flex items-center justify-center">
+                    <i class="fas fa-lightbulb text-yellow-400 mr-4"></i>
+                    Tips and Tricks for Sprunked
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Master the Scratch-Based Gameplay</h3>
+                        <p class="text-gray-700">Sprunked's scratch-based gameplay can take some getting used to, but practice makes perfect. Focus on timing your scratches to reveal sound effects in sync with the beat. The more you experiment, the better you'll get at mastering this unique mechanic.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Combine Different Characters</h3>
+                        <p class="text-gray-700">Each character in Sprunked brings something unique to your composition. Try combining different characters to see how their beats, effects, and melodies interact. Experimenting with different combinations can unlock new sounds and lead to more complex rhythms.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Dive into horror mod</h3>
+                        <p class="text-gray-700">If you want to challenge yourself, explore horror mod. The eerie sound effects and darker visuals make for an entirely new experience. This mode is great for creating moody, atmospheric tracks that stand out from traditional upbeat rhythms.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Share Your Creations</h3>
+                        <p class="text-gray-700">Once you've created a composition you're proud of, don't forget to share it with the Sprunked community! The game allows you to share your tracks with others, so you can showcase your creativity and get feedback from fellow players.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800 flex items-center justify-center">
+                    <i class="fas fa-question-circle text-yellow-400 mr-4"></i>
+                    FAQ: Frequently Asked Questions About Sprunked
+                </h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What is Sprunked?</h3>
+                        <p class="text-gray-700">Sprunked is a free mod for Incredibox that introduces scratch-based gameplay, allowing players to create rhythms and melodies by interacting with the screen. The game also features unique characters, new sound effects, and the exciting Horror Mode, which adds eerie elements to the music-making process.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How is Sprunked different from the original Incredibox?</h3>
+                        <p class="text-gray-700">Sprunked adds a new dimension to the traditional Incredibox gameplay by incorporating scratch-based mechanics. This allows players to interact with the music in a more dynamic way, revealing hidden sounds as they scratch the screen. The addition of unique characters and Horror Mode also sets it apart.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Do I need to download Sprunked to play it?</h3>
+                        <p class="text-gray-700">No, you don't need to download anything to play Sprunked. The game is available to play directly in your browser, making it accessible across both PC and mobile devices. You can start playing instantly without any installations.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Can I play Sprunked on mobile devices?</h3>
+                        <p class="text-gray-700">Yes, Sprunked is optimized for both PC and mobile play. Whether you're using a desktop browser or a mobile device, you can enjoy the full game experience without any issues, thanks to its HTML-based design.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What is Horror Mode in Sprunked?</h3>
+                        <p class="text-gray-700">Horror Mode in Sprunked introduces a darker, moodier tone to the game. It includes eerie sound effects and visuals, allowing players to create more atmospheric compositions. It's perfect for those who enjoy experimenting with haunting soundscapes and unique beats.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Who developed Sprunked?</h3>
+                        <p class="text-gray-700">Sprunked was developed by @nonnie0474 on the cocrea.world platform. The mod draws inspiration from other popular Incredibox mods like Sprunki, while introducing new gameplay mechanics and features that set it apart.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Are there new characters in Sprunked?</h3>
+                        <p class="text-gray-700">Yes, Sprunked introduces new characters that contribute unique audio elements to your compositions. Each character offers a different set of beats, melodies, and sound effects, allowing you to experiment with diverse soundscapes and rhythms.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Can I share my music from Sprunked with others?</h3>
+                        <p class="text-gray-700">Absolutely! Sprunked encourages players to share their musical creations with the community. You can easily share your tracks with friends or post them online to receive feedback and showcase your creativity.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How do I get better at Sprunked's scratch-based gameplay?</h3>
+                        <p class="text-gray-700">The best way to improve at Sprunked is to practice. The scratch-based mechanic may take some time to master, but experimenting with different timing and rhythm combinations will help you become more familiar with how it works.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Is Sprunked free to play?</h3>
+                        <p class="text-gray-700">Yes, Sprunked is completely free to play. You can access the game online without any fees or purchases. Just jump into your browser, start the game, and enjoy!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ready to Play Section -->
+        <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6 flex items-center justify-center">
+                    <i class="fas fa-play-circle text-yellow-400 mr-4"></i>
+                    Ready to Play Sprunked?
+                </h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Get ready to experience a whole new way to create music with Sprunked! With its innovative scratch-based gameplay, unique characters, and immersive Horror Mode, this free Incredibox mod offers endless creative possibilities. Whether you're playing on PC or mobile, you can start making music instantly. No downloads, no hassle—just click Play Now and dive into the world of Sprunked!</p>
+                <a href="#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play Sprunked Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!
+            </p>
+        </div>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox"
+                    class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
+        </div>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en"
+                        class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko"
+                        class="text-white hover:text-yellow-400 transition duration-300">한국어</a></li>
+                <li><a href="../ru/" hreflang="ru"
+                        class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt"
+                        class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { enterFullscreen, exitFullscreen, handleFullscreenChange, autoEnterFullscreen } from '../fullscreen.js';
+
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+        const gameContainer = document.querySelector('.game-container');
+        const domainWatermark = document.getElementById('domain-watermark');
+
+        fullscreenBtn.addEventListener('click', () => {
+            enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        exitFullscreenBtn.addEventListener('click', () => {
+            exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('webkitfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('mozfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('MSFullscreenChange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        window.addEventListener('load', () => {
+            autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        navSlide();
+
+        // 注册Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    <div style="display:none">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XQY73C38G"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-2XQY73C38G');
+        </script>
+        <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
+    </div>
+</body>
+
+</html>
