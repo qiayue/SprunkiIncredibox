@@ -143,7 +143,6 @@
                 <button class="category-button" data-category="mouth">嘴巴</button>
                 <button class="category-button" data-category="hair">头发</button>
                 <button class="category-button" data-category="headgear">头饰</button>
-                <button class="category-button" data-category="background">背景</button>
             </div>
             <div id="visualList" class="visual-list"></div>
         </div>
@@ -162,50 +161,33 @@
             'headgear': 5
         };
         let currentCategory = 'body';
-        let backgroundColor = 'transparent';
 
         function createVisualList(category) {
             const list = document.getElementById('visualList');
             list.innerHTML = '';
 
-            if (category === 'background') {
-                const colors = ['transparent', 'red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray'];
-                colors.forEach(color => {
-                    const item = document.createElement('div');
-                    item.className = 'visual-item';
-                    item.dataset.value = color;
-                    item.style.backgroundColor = color === 'transparent' ? 'white' : color;
-                    item.innerHTML = color === 'transparent' ? '透明' : '';
-                    if (color === backgroundColor) {
-                        item.classList.add('selected');
-                    }
-                    list.appendChild(item);
-                });
-            } else {
-                // 添加空选项
-                const emptyItem = document.createElement('div');
-                emptyItem.className = 'visual-item';
-                emptyItem.dataset.value = '';
-                emptyItem.innerHTML = '<span>无</span>';
-                list.appendChild(emptyItem);
+            // 添加空选项
+            const emptyItem = document.createElement('div');
+            emptyItem.className = 'visual-item';
+            emptyItem.dataset.value = '';
+            emptyItem.innerHTML = '<span>无</span>';
+            list.appendChild(emptyItem);
 
-                for (let i = 1; i <= partCounts[category]; i++) {
-                    const item = document.createElement('div');
-                    item.className = 'visual-item';
-                    item.dataset.value = `./img/${category}/download-${i}.png`;
-                    item.innerHTML = `<img src="./img/${category}/download-${i}.png" alt="${category}${i}">`;
-                    list.appendChild(item);
-                }
-
-                // 设置默认选中项
-                const selectedValue = document.getElementById(category).src;
-                const selectedItem = list.querySelector(`[data-value="${selectedValue}"]`) || list.children[0];
-                selectedItem.classList.add('selected');
+            for (let i = 1; i <= partCounts[category]; i++) {
+                const item = document.createElement('div');
+                item.className = 'visual-item';
+                item.dataset.value = `./img/${category}/download-${i}.png`;
+                item.innerHTML = `<img src="./img/${category}/download-${i}.png" alt="${category}${i}">`;
+                list.appendChild(item);
             }
+
+            // 设置默认选中项
+            const selectedValue = document.getElementById(category).src;
+            const selectedItem = list.querySelector(`[data-value="${selectedValue}"]`) || list.children[0];
+            selectedItem.classList.add('selected');
         }
 
         function updateCharacter() {
-            document.getElementById('character').style.backgroundColor = backgroundColor;
             parts.forEach(part => {
                 const img = document.getElementById(part);
                 const selectedItem = document.querySelector(`#visualList .selected`);
@@ -230,9 +212,6 @@
             if (clickedItem) {
                 document.querySelectorAll('#visualList .visual-item').forEach(item => item.classList.remove('selected'));
                 clickedItem.classList.add('selected');
-                if (currentCategory === 'background') {
-                    backgroundColor = clickedItem.dataset.value;
-                }
                 updateCharacter();
             }
         });
@@ -242,10 +221,6 @@
             const ctx = canvas.getContext('2d');
             canvas.width = 300;
             canvas.height = 300;
-            
-            // 绘制背景
-            ctx.fillStyle = backgroundColor;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             parts.forEach(part => {
                 const img = document.getElementById(part);

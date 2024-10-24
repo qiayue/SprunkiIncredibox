@@ -13,412 +13,414 @@
     <link rel="canonical" href="http://sprunkiincredibox.com/sprunki-characters/"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="../tailwind.js"></script>
-    <link rel="stylesheet" href="../style.css?v=09301430">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
      crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="../"><i class="fas fa-music"></i> Sprunki Incredibox</a>
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox
+                    </a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="../#play-now"><i class="fas fa-play"></i> Play Sprunki</a></li>
-                    <li><a href="../neesterversal-v3-incredibox/"><i class="fas fa-play"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/"><i class="fas fa-play"></i> Gray Sprunki</a></li>
-                    <li><a href="../sprunki-oc/"><i class="fas fa-play"></i> Sprunki OC</a></li>
-                    <li><a href="./#characters"><i class="fas fa-users"></i> Characters</a></li>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../mod/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Mod</a></li>
+                    <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-1"></i> Download</a></li>
+                    <li><a href="./" class="hover:text-yellow-400 transition duration-300" title="Sprunki Characters"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero mt-[70px]">
-        <div class="hero-content container">
-            <h1>Discover Sprunki Characters: Craft Unique Beats in the Sprunki Incredibox</h1>
-            <p>Create, mix, and groove with the spunkiest characters around!</p>
-            <a href="../#play-now" class="cta-button"><i class="fas fa-play"></i> Play Sprunki Now</a>
+    <!-- 移动端导航菜单 -->
+    <div class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="../play/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../download/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-download mr-2"></i> Download</a></li>
+            <li><a href="./" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
+
+    <main class="pt-14">
+        <section class="bg-gradient-to-r from-red-700 to-red-900 text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-4">Discover Sprunki Characters: Craft Unique Beats in the Sprunki Incredibox</h1>
+                <p class="text-xl mb-10">Create, mix, and groove with the spunkiest characters around!</p>
+                <a href="../#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">
+                    <i class="fas fa-play mr-2"></i> Play Sprunki Now
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-white py-16" id="about">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">What Are Sprunki Characters?</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto">Sprunki characters are a set of original, community-designed characters featured in the Sprunki Incredibox mod, a popular fan-made expansion of the Incredibox music game. Each Sprunki character brings a unique sound element, whether it's a beat, melody, or special effect. These characters are not only visually distinct, but they also offer players a new and exciting way to craft custom tracks. Sprunki characters contribute to the overall sound mix, giving players even more flexibility in creating original music within the Incredibox platform.</p>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-b from-gray-200 to-white py-16" id="features">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Why Are Sprunki Characters So Popular?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🎨</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Original Design and Sounds</h3>
+                        <p class="text-gray-600">Sprunki characters are fan creations, and their designs are as varied as the imaginations of their creators. Each character embodies a unique musical element, whether it's a bass-heavy beat or a whimsical vocal melody. This diversity makes every character special, offering endless possibilities for players looking to experiment with new sounds and create dynamic tracks.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🤝</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Community-Driven Creativity</h3>
+                        <p class="text-gray-600">What sets Sprunki characters apart is that many of them come from the Incredibox community. Fans can design and submit their own characters to the game, meaning the roster of available characters is always growing. This community-driven creativity is a hallmark of the Sprunki Incredibox mod and makes the game feel ever-evolving and personal.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-5xl mb-6 text-red-600">🎵</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Enhancing the Sprunki Incredibox Experience</h3>
+                        <p class="text-gray-600">The core of Incredibox's charm has always been its simple drag-and-drop interface and the joy of experimenting with different combinations of sounds. Sprunki characters take this a step further by adding a layer of customization that makes the game even more engaging. With the addition of new Sprunki characters, you can combine traditional Incredibox elements with fresh, original sounds, making your mixes more unique than ever.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-16" id="characters">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Meet the Sprunki Characters: Your Key to Creative Beats</h2>
+                <p class="text-lg text-center mb-12 text-gray-700 max-w-3xl mx-auto">In the world of Sprunki Incredibox, every character comes to life with their own unique sound, style, and personality. These characters are the building blocks of your musical creations, each bringing a distinctive vibe to the table. As an experienced player, I can tell you that the magic of Sprunki lies in combining these diverse personalities to create tracks that are entirely your own.</p>
+                
+                <!-- Beats Characters -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-center mb-8 text-red-700">Beats</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/orange.png" alt="Sprunki Orange (Oren)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Orange (Oren):</h4>
+                                <p class="text-gray-700">Oren delivers upbeat electronic rhythms that form the energetic backbone of your track. His lively beats bring energy and excitement, making him essential for crafting dynamic, fast-paced compositions.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/silver.png" alt="Sprunki Silver (Clukr)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Silver (Clukr):</h4>
+                                <p class="text-gray-700">Clukr introduces mechanical beats with a futuristic flair. His precise, industrial sounds add a sharp, modern edge to your music, perfect for tracks that evoke a sci-fi or high-tech atmosphere.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/funbot.png" alt="Sprunki Fun Bot" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Fun Bot:</h4>
+                                <p class="text-gray-700">Fun Bot provides playful, robotic beats with quirky sound effects. His energetic and eccentric rhythms give your track a lighthearted and experimental feel, ideal for creative, unconventional compositions.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/red.png" alt="Sprunki Red (Raddy)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Red (Raddy):</h4>
+                                <p class="text-gray-700">Raddy's powerful drum beats bring intensity and boldness to your music. His commanding rhythms ensure a strong foundation, making him perfect for high-energy tracks that demand attention.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/green.png" alt="Sprunki Green (Vineria)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Green (Vineria):</h4>
+                                <p class="text-gray-700">Vineria offers deep, groovy beats with a smooth flow. His steady rhythms create a balanced and calming groove, making him an essential choice for laid-back, chill compositions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Effects Characters -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-center mb-8 text-red-700">Effects</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/gray.png" alt="Sprunki Gray" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Gray:</h4>
+                                <p class="text-gray-700">Gray contributes atmospheric effects that enhance the depth and mood of your music. His resonant, echoing sounds add a sense of space, making your track feel more immersive and layered.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/brown.png" alt="Sprunki Brown (Brud)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Brown (Brud):</h4>
+                                <p class="text-gray-700">Brud's quirky sound effects inject unpredictable energy into your track. His oddball, eccentric noises add a playful, surprising twist, perfect for tracks that thrive on uniqueness and spontaneity.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/gold.png" alt="Sprunki Gold (Garnold)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Gold (Garnold):</h4>
+                                <p class="text-gray-700">Garnold delivers powerful, metallic effects that bring a sense of grandeur and authority to your music. His heavy sounds amplify the intensity of your track, adding drama and impact.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/lime.png" alt="Sprunki Lime (OWAKCX)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Lime (OWAKCX):</h4>
+                                <p class="text-gray-700">OWAKCX adds mysterious, abstract effects to your track, creating an aura of suspense and intrigue. His unique sound textures are ideal for compositions that aim to evoke curiosity or tension.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/sky.png" alt="Sprunki Sky Blue (Sky)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Sky Blue (Sky):</h4>
+                                <p class="text-gray-700">Sky introduces light, airy sound effects that lift the tone of your track. His refreshing, ethereal sounds bring a sense of calm and brightness, balancing out deeper and heavier beats.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Melodies Characters -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-center mb-8 text-red-700">Melodies</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/sun.png" alt="Sprunki: Mr. Sun" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki: Mr. Sun:</h4>
+                                <p class="text-gray-700">Mr. Sun brings bright, uplifting melodies that infuse your track with warmth and positivity. His cheerful tones make him perfect for creating feel-good music with a sunny, optimistic vibe.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/purple.png" alt="Sprunki Purple (Durple)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Purple (Durple):</h4>
+                                <p class="text-gray-700">Durple's deep, emotive melodies add richness and emotional depth to your composition. His soulful sound is perfect for creating tracks with heart, warmth, and a sense of introspection.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/tree.png" alt="Sprunki Mr. Tree" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Mr. Tree:</h4>
+                                <p class="text-gray-700">Mr. Tree offers soothing, organic melodies that ground your track with earthy, natural tones. His serene, calming sound evokes the peacefulness of nature, ideal for more relaxed compositions.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/yellow.png" alt="Sprunki Yellow (Simon)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Yellow (Simon):</h4>
+                                <p class="text-gray-700">Simon's crisp, sharp melodies bring a vibrant and engaging hook to your track. His bright, lively tones cut through the mix, ensuring your composition stands out with clarity and energy.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/tan.png" alt="Sprunki Tan (Tunner)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Tan (Tunner):</h4>
+                                <p class="text-gray-700">Tunner's mellow, relaxing melodies create a soothing, comforting atmosphere in your music. His warm, easy-going sound is perfect for chill-out or ambient tracks designed to relax the listener.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocals Characters -->
+                <div>
+                    <h3 class="text-3xl font-semibold text-center mb-8 text-red-700">Vocals</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/computer.png" alt="Sprunki Mr. Fun Computer" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Mr. Fun Computer:</h4>
+                                <p class="text-gray-700">Mr. Fun Computer delivers robotic, digitized vocals that give your track a futuristic, tech-driven vibe. His mechanical voice is ideal for compositions that explore themes of technology or innovation.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/white.png" alt="Sprunki White (Wenda)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki White (Wenda):</h4>
+                                <p class="text-gray-700">Wenda offers smooth, angelic vocals that add a harmonious, ethereal layer to your music. Her soft, gentle voice brings elegance and beauty, enhancing the emotional depth of any track.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/pink.png" alt="Sprunki Pink (Pinki)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Pink (Pinki):</h4>
+                                <p class="text-gray-700">Pinki's bubbly, playful vocals introduce a fun and cheerful element to your track. Her upbeat sound adds a lighthearted, animated vibe, perfect for energetic and joyful compositions.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/blue.png" alt="Sprunki Blue (Jevin)" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Blue (Jevin):</h4>
+                                <p class="text-gray-700">Jevin's deep, resonant vocals provide a cool, charismatic presence in your music. His rich voice adds depth and character, ideal for tracks that need a confident, grounded vocal layer.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                            <div class="h-[325px] flex items-center justify-center bg-gray-100">
+                                <img src="./img/black.png" alt="Sprunki Black" class="max-h-full w-auto">
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2 text-red-700">Sprunki Black:</h4>
+                                <p class="text-gray-700">Black's powerful, soulful vocals bring intensity and emotion to your track. His commanding voice adds weight and seriousness, perfect for tracks that require a strong, impactful vocal performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-b from-white to-gray-100 py-16" id="how-to">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Use Sprunki Characters?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">1</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Select Your Characters</h3>
+                        <p class="text-gray-700">To start creating with Sprunki characters, begin by selecting from a variety of character options, each representing a unique sound, beat, or effect.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">2</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Mix and Match</h3>
+                        <p class="text-gray-700">Experimentation is key! With Sprunki characters, you can mix up to seven sounds simultaneously. Combine different beats, melodies, and effects to create a layered, dynamic musical composition.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">3</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Unlock Bonuses</h3>
+                        <p class="text-gray-700">Just like the original Incredibox game, Sprunki characters offer hidden bonuses when you find special sound combinations. Unlocking these bonuses triggers visually engaging animations.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">4</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Save and Share</h3>
+                        <p class="text-gray-700">Once you've crafted your mix using Sprunki characters, you can save your track and share it with the world. Showcase your creativity and get feedback from other music lovers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-16" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">FAQs about Sprunki Characters</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What are Sprunki characters in Incredibox?</h3>
+                        <p class="text-gray-700">Sprunki characters are original, fan-created figures featured in the Sprunki Incredibox mod. Each character has a unique sound and appearance, contributing distinct beats, melodies, or effects to a player's custom music mix.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How do Sprunki characters differ from original Incredibox characters?</h3>
+                        <p class="text-gray-700">While Incredibox's original characters are designed by the game's developers, Sprunki characters are community-generated, meaning they are created by fans of the game. These characters bring fresh sounds and unique visual styles that differ from the official Incredibox characters.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Can I create my own Sprunki character?</h3>
+                        <p class="text-gray-700">Yes, one of the highlights of the Sprunki mod is that fans can submit their own character designs. Once approved by the mod's community, your character can be included in the game, allowing other players to use it in their musical creations.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Are Sprunki characters free to use?</h3>
+                        <p class="text-gray-700">Yes, Sprunki characters are entirely free to use within the Sprunki Incredibox mod. The mod itself is free and can be accessed through the official Sprunki Incredibox website, allowing all players to enjoy these custom characters without any additional costs.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">What are some of the most popular Sprunki characters?</h3>
+                        <p class="text-gray-700">Popularity can vary as new characters are added, but players tend to gravitate toward characters with distinctive sounds and strong visual designs. Fan favorites often include those with bold bass lines, unique vocals, or fun effects that add an extra layer of depth to a track.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How can I unlock special bonuses with Sprunki characters?</h3>
+                        <p class="text-gray-700">Just like in the original Incredibox game, certain combinations of Sprunki characters will unlock special bonuses. These bonuses can enhance your track with additional sounds or trigger animated sequences. Experiment with different sound combinations to discover all the hidden features.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Can I download my Sprunki character creations?</h3>
+                        <p class="text-gray-700">Yes, once you've completed your music mix using Sprunki characters, you can download your creation as an MP3 file. This feature makes it easy to enjoy your tracks offline or share them with others.</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">How often are new Sprunki characters added?</h3>
+                        <p class="text-gray-700">New characters are regularly added to the Sprunki Incredibox mod as part of the community-driven nature of the project. Fans continuously submit new characters, and as they are approved, they become available for all players to use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-red-700 to-red-900 text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-6">Sprunki Character Dynamics: Harmonizing the Sprunki Universe</h2>
+                <p class="text-xl mb-10 max-w-3xl mx-auto">In Sprunki Incredibox, these characters don't just coexist—they harmonize. Each character's unique personality and sound adds a crucial layer to your compositions, allowing for endless creative possibilities.</p>
+                <a href="../#play-now" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Play Sprunki Incredibox Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
         </div>
-    </section>
-
-    <section class="about-sprunki" id="about">
-        <div class="container">
-            <h2>What Are Sprunki Characters?</h2>
-            <p>Sprunki characters are a set of original, community-designed characters featured in the Sprunki Incredibox mod, a popular fan-made expansion of the Incredibox music game. Each Sprunki character brings a unique sound element, whether it's a beat, melody, or special effect. These characters are not only visually distinct, but they also offer players a new and exciting way to craft custom tracks. Sprunki characters contribute to the overall sound mix, giving players even more flexibility in creating original music within the Incredibox platform.</p>
+        <div class="container mx-auto px-4 mt-4">
+            <p class="text-center"><a href="https://github.com/qiayue/SprunkiIncredibox" class="text-white hover:text-yellow-400 transition duration-300">Sprunki Incredibox Github</a></p>
         </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Why Are Sprunki Characters So Popular?</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Original Design and Sounds</h3>
-                    <p>Sprunki characters are fan creations, and their designs are as varied as the imaginations of their creators. Each character embodies a unique musical element, whether it's a bass-heavy beat or a whimsical vocal melody. This diversity makes every character special, offering endless possibilities for players looking to experiment with new sounds and create dynamic tracks.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Community-Driven Creativity</h3>
-                    <p>What sets Sprunki characters apart is that many of them come from the Incredibox community. Fans can design and submit their own characters to the game, meaning the roster of available characters is always growing. This community-driven creativity is a hallmark of the Sprunki Incredibox mod and makes the game feel ever-evolving and personal.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎵</div>
-                    <h3>Enhancing the Sprunki Incredibox Experience</h3>
-                    <p>The core of Incredibox's charm has always been its simple drag-and-drop interface and the joy of experimenting with different combinations of sounds. Sprunki characters take this a step further by adding a layer of customization that makes the game even more engaging. With the addition of new Sprunki characters, you can combine traditional Incredibox elements with fresh, original sounds, making your mixes more unique than ever.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sprunki-characters">
-        <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Meet the Sprunki Characters: Your Key to Creative Beats</h2>
-            <p class="text-lg text-center mb-12">In the world of Sprunki Incredibox, every character comes to life with their own unique sound, style, and personality. These characters are the building blocks of your musical creations, each bringing a distinctive vibe to the table. As an experienced player, I can tell you that the magic of Sprunki lies in combining these diverse personalities to create tracks that are entirely your own.</p>
-            
-            <div class="character-category mb-16">
-                <h3 class="text-2xl font-semibold text-center mb-8">Beats</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/orange.png" alt="Sprunki Orange (Oren)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Orange (Oren):</h4>
-                            <p class="text-gray-700">Oren delivers upbeat electronic rhythms that form the energetic backbone of your track. His lively beats bring energy and excitement, making him essential for crafting dynamic, fast-paced compositions.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/silver.png" alt="Sprunki Silver (Clukr)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Silver (Clukr):</h4>
-                            <p class="text-gray-700">Clukr introduces mechanical beats with a futuristic flair. His precise, industrial sounds add a sharp, modern edge to your music, perfect for tracks that evoke a sci-fi or high-tech atmosphere.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/funbot.png" alt="Sprunki Fun Bot" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Fun Bot:</h4>
-                            <p class="text-gray-700">Fun Bot provides playful, robotic beats with quirky sound effects. His energetic and eccentric rhythms give your track a lighthearted and experimental feel, ideal for creative, unconventional compositions.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/red.png" alt="Sprunki Red (Raddy)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Red (Raddy):</h4>
-                            <p class="text-gray-700">Raddy's powerful drum beats bring intensity and boldness to your music. His commanding rhythms ensure a strong foundation, making him perfect for high-energy tracks that demand attention.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/green.png" alt="Sprunki Green (Vineria)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Green (Vineria):</h4>
-                            <p class="text-gray-700">Vineria offers deep, groovy beats with a smooth flow. His steady rhythms create a balanced and calming groove, making him an essential choice for laid-back, chill compositions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="character-category mb-16">
-                <h3 class="text-2xl font-semibold text-center mb-8">Effects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/gray.png" alt="Sprunki Gray" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Gray:</h4>
-                            <p class="text-gray-700">Gray contributes atmospheric effects that enhance the depth and mood of your music. His resonant, echoing sounds add a sense of space, making your track feel more immersive and layered.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/brown.png" alt="Sprunki Brown (Brud)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Brown (Brud):</h4>
-                            <p class="text-gray-700">Brud's quirky sound effects inject unpredictable energy into your track. His oddball, eccentric noises add a playful, surprising twist, perfect for tracks that thrive on uniqueness and spontaneity.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/gold.png" alt="Sprunki Gold (Garnold)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Gold (Garnold):</h4>
-                            <p class="text-gray-700">Garnold delivers powerful, metallic effects that bring a sense of grandeur and authority to your music. His heavy sounds amplify the intensity of your track, adding drama and impact.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/lime.png" alt="Sprunki Lime (OWAKCX)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Lime (OWAKCX):</h4>
-                            <p class="text-gray-700">OWAKCX adds mysterious, abstract effects to your track, creating an aura of suspense and intrigue. His unique sound textures are ideal for compositions that aim to evoke curiosity or tension.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/sky.png" alt="Sprunki Sky Blue (Sky)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Sky Blue (Sky):</h4>
-                            <p class="text-gray-700">Sky introduces light, airy sound effects that lift the tone of your track. His refreshing, ethereal sounds bring a sense of calm and brightness, balancing out deeper and heavier beats.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="character-category mb-16">
-                <h3 class="text-2xl font-semibold text-center mb-8">Melodies</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/sun.png" alt="Sprunki: Mr. Sun" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki: Mr. Sun:</h4>
-                            <p class="text-gray-700">Mr. Sun brings bright, uplifting melodies that infuse your track with warmth and positivity. His cheerful tones make him perfect for creating feel-good music with a sunny, optimistic vibe.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/purple.png" alt="Sprunki Purple (Durple)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Purple (Durple):</h4>
-                            <p class="text-gray-700">Durple's deep, emotive melodies add richness and emotional depth to your composition. His soulful sound is perfect for creating tracks with heart, warmth, and a sense of introspection.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/tree.png" alt="Sprunki Mr. Tree" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Mr. Tree:</h4>
-                            <p class="text-gray-700">Mr. Tree offers soothing, organic melodies that ground your track with earthy, natural tones. His serene, calming sound evokes the peacefulness of nature, ideal for more relaxed compositions.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/yellow.png" alt="Sprunki Yellow (Simon)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Yellow (Simon):</h4>
-                            <p class="text-gray-700">Simon's crisp, sharp melodies bring a vibrant and engaging hook to your track. His bright, lively tones cut through the mix, ensuring your composition stands out with clarity and energy.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/tan.png" alt="Sprunki Tan (Tunner)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Tan (Tunner):</h4>
-                            <p class="text-gray-700">Tunner's mellow, relaxing melodies create a soothing, comforting atmosphere in your music. His warm, easy-going sound is perfect for chill-out or ambient tracks designed to relax the listener.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="character-category">
-                <h3 class="text-2xl font-semibold text-center mb-8">Vocals</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/computer.png" alt="Sprunki Mr. Fun Computer" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Mr. Fun Computer:</h4>
-                            <p class="text-gray-700">Mr. Fun Computer delivers robotic, digitized vocals that give your track a futuristic, tech-driven vibe. His mechanical voice is ideal for compositions that explore themes of technology or innovation.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/white.png" alt="Sprunki White (Wenda)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki White (Wenda):</h4>
-                            <p class="text-gray-700">Wenda offers smooth, angelic vocals that add a harmonious, ethereal layer to your music. Her soft, gentle voice brings elegance and beauty, enhancing the emotional depth of any track.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/pink.png" alt="Sprunki Pink (Pinki)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Pink (Pinki):</h4>
-                            <p class="text-gray-700">Pinki's bubbly, playful vocals introduce a fun and cheerful element to your track. Her upbeat sound adds a lighthearted, animated vibe, perfect for energetic and joyful compositions.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/blue.png" alt="Sprunki Blue (Jevin)" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Blue (Jevin):</h4>
-                            <p class="text-gray-700">Jevin's deep, resonant vocals provide a cool, charismatic presence in your music. His rich voice adds depth and character, ideal for tracks that need a confident, grounded vocal layer.</p>
-                        </div>
-                    </div>
-                    <div class="character-item bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                        <div class="h-[325px] flex items-center justify-center bg-gray-100">
-                            <img src="./img/black.png" alt="Sprunki Black" class="max-h-full w-auto">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">Sprunki Black:</h4>
-                            <p class="text-gray-700">Black's powerful, soulful vocals bring intensity and emotion to your track. His commanding voice adds weight and seriousness, perfect for tracks that require a strong, impactful vocal performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works" id="how-to">
-        <div class="container">
-            <h2>How to Use Sprunki Characters?</h2>
-            <div class="step-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>Select Your Characters</h3>
-                    <p>To start creating with Sprunki characters, begin by selecting from a variety of character options, each representing a unique sound, beat, or effect. The game's interface allows you to drag and drop these characters onto open slots, where they will immediately start contributing their sound to your track.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>Mix and Match</h3>
-                    <p>Experimentation is key! With Sprunki characters, you can mix up to seven sounds simultaneously. Combine different beats, melodies, and effects from your chosen characters to create a layered, dynamic musical composition. The more you play around with the different characters, the more creative and unique your music will become.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>Unlock Bonuses</h3>
-                    <p>Just like the original Incredibox game, Sprunki characters offer hidden bonuses when you find special sound combinations. Unlocking these bonuses not only gives you a more dynamic soundtrack but also triggers visually engaging animations that enhance the gameplay.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h3>Save and Share</h3>
-                    <p>Once you've crafted your mix using Sprunki characters, you can save your track and share it with the world. Whether it's through social media or within the Incredibox community, Sprunki gives you the tools to showcase your creativity and get feedback from other music lovers.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq">
-        <div class="container">
-            <h2>FAQs about Sprunki Characters</h2>
-            <div class="faq-item">
-                <p class="faq-question">What are Sprunki characters in Incredibox?</p>
-                <p>Sprunki characters are original, fan-created figures featured in the Sprunki Incredibox mod. Each character has a unique sound and appearance, contributing distinct beats, melodies, or effects to a player's custom music mix.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">How do Sprunki characters differ from original Incredibox characters?</p>
-                <p>While Incredibox's original characters are designed by the game's developers, Sprunki characters are community-generated, meaning they are created by fans of the game. These characters bring fresh sounds and unique visual styles that differ from the official Incredibox characters.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Can I create my own Sprunki character?</p>
-                <p>Yes, one of the highlights of the Sprunki mod is that fans can submit their own character designs. Once approved by the mod's community, your character can be included in the game, allowing other players to use it in their musical creations.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Are Sprunki characters free to use?</p>
-                <p>Yes, Sprunki characters are entirely free to use within the Sprunki Incredibox mod. The mod itself is free and can be accessed through the official Sprunki Incredibox website, allowing all players to enjoy these custom characters without any additional costs.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">What are some of the most popular Sprunki characters?</p>
-                <p>Popularity can vary as new characters are added, but players tend to gravitate toward characters with distinctive sounds and strong visual designs. Fan favorites often include those with bold bass lines, unique vocals, or fun effects that add an extra layer of depth to a track.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">How can I unlock special bonuses with Sprunki characters?</p>
-                <p>Just like in the original Incredibox game, certain combinations of Sprunki characters will unlock special bonuses. These bonuses can enhance your track with additional sounds or trigger animated sequences. Experiment with different sound combinations to discover all the hidden features.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">Can I download my Sprunki character creations?</p>
-                <p>Yes, once you've completed your music mix using Sprunki characters, you can download your creation as an MP3 file. This feature makes it easy to enjoy your tracks offline or share them with others.</p>
-            </div>
-            <div class="faq-item">
-                <p class="faq-question">How often are new Sprunki characters added?</p>
-                <p>New characters are regularly added to the Sprunki Incredibox mod as part of the community-driven nature of the project. Fans continuously submit new characters, and as they are approved, they become available for all players to use.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="sprunki-call-to-action">
-        <div class="container">
-            <h2>Sprunki Character Dynamics: Harmonizing the Sprunki Universe</h2>
-            <p>In Sprunki Incredibox, these characters don't just coexist—they harmonize. Each character's unique personality and sound adds a crucial layer to your compositions, allowing for endless creative possibilities. As you play around with different character combinations, you'll discover hidden dynamics that bring out the best in your mixes. From Oren's energetic beats to Vinera's mysterious tones, the diversity of the Sprunki characters ensures that no two mixes are ever the same.</p>
-            <p style="text-align: center;margin-top: 30px;">
-                <a href="../#play-now" class="cta-button">Play Sprunki Incredibox Now</a>
-            </p>
-            <p>Unleash your creativity and explore the world of Sprunki characters in Sprunki Incredibox. With endless combinations of sounds and unique character designs, the possibilities for creating original music are limitless.</p>
-            <p>Ready to create your next hit? Jump in today and share your mixes with the world!</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
-        </div>
-        <div class="container">
-            <p><a href="https://github.com/qiayue/SprunkiIncredibox" style="color:white;">Sprunki Incredibox Github</a></p>
-        </div>
-        <div class="language-selector">
-            <p>Choose your language:</p>
-            <ul>
-                <li><a href="../" hreflang="en">English</a></li>
-                <li><a href="../ko/" hreflang="ko">한국</a></li>
-                <li><a href="../ru/" hreflang="ru">Русский</a></li>
-                <li><a href="../pt/" hreflang="pt">Português</a></li>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="../" hreflang="en" class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
+                <li><a href="../ko/" hreflang="ko" class="text-white hover:text-yellow-400 transition duration-300">한국</a></li>
+                <li><a href="../ru/" hreflang="ru" class="text-white hover:text-yellow-400 transition duration-300">Русский</a></li>
+                <li><a href="../pt/" hreflang="pt" class="text-white hover:text-yellow-400 transition duration-300">Português</a></li>
             </ul>
         </div>
     </footer>
 
     <script>
-        const navSlide = () => {
-            const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links li');
-            
-            burger.addEventListener('click', () => {
-                nav.classList.toggle('nav-active');
-                
-                navLinks.forEach((link, index) => {
-                    if (link.style.animation) {
-                        link.style.animation = '';
-                    } else {
-                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                    }
-                });
-                
-                burger.classList.toggle('toggle');
-            });
-        }
+        // 汉堡按钮功能
+        const burger = document.querySelector('.burger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const body = document.body;
 
-        navSlide();
+        burger.addEventListener('click', () => {
+            mobileNav.classList.toggle('-translate-x-full');
+            body.classList.toggle('overflow-hidden');
+            burger.classList.toggle('active');
+        });
+
+        // 汉堡按钮动画
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            burger.children[0].classList.toggle('rotate-45');
+            burger.children[0].classList.toggle('translate-y-1.5');
+            burger.children[1].classList.toggle('opacity-0');
+            burger.children[2].classList.toggle('-rotate-45');
+            burger.children[2].classList.toggle('-translate-y-1.5');
+        });
     </script>
-    <div style="display:none">
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XQY73C38G"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-2XQY73C38G');
-        </script>
-        <script defer data-domain="sprunkiincredibox.com" src="https://click.pageview.click/js/script.js"></script>
-    </div>
 </body>
 </html>

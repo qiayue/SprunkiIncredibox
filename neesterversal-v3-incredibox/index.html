@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,310 +13,323 @@
     <link rel="manifest" href="../site.webmanifest">
     <link rel="canonical" href="https://sprunkiincredibox.com/neesterversal-v3-incredibox/"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../style.css?v=09301430">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675"
-     crossorigin="anonymous"></script>
-     <script src="../tailwind.js"></script>
-    <style type="text/css">
-        .related-games {
-            background-color: #f5f5f5;
-            padding: 50px 0;
-        }
-
-        .game-card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .game-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .game-card h3 {
-            padding: 15px 15px 5px;
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .game-card p {
-            padding: 0 15px 15px;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    <script src="../tailwind.js"></script>
+    <link rel="stylesheet" href="../tailwind.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1522458956946675" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
+
+<body class="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 font-sans leading-relaxed">
+    <header class="bg-gradient-to-r from-red-800 to-red-900 text-white py-4 fixed top-0 left-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="../"><i class="fas fa-music"></i> Sprunki Incredibox</a>
+                    <a href="../" class="flex items-center text-xl font-bold">
+                        <i class="fas fa-music mr-2 hidden sm:block"></i> Sprunki Incredibox
+                    </a>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="../#play-now"><i class="fas fa-play"></i> Play Sprunki</a></li>
-                    <li><a href="./#play-neesterversal"><i class="fas fa-play"></i> Neesterversal V3</a></li>
-                    <li><a href="../gray-sprunki/"><i class="fas fa-play"></i> Gray Sprunki</a></li>
-                    <li><a href="../sprunki-oc/"><i class="fas fa-play"></i> Sprunki OC</a></li>
-                    <li><a href="../sprunki-characters/"><i class="fas fa-users"></i> Characters</a></li>
+                <ul class="nav-links hidden md:flex space-x-6">
+                    <li><a href="../#play-now" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Play Sprunki</a></li>
+                    <li><a href="../gray-sprunki/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Gray Sprunki</a></li>
+                    <li><a href="../sprunki-oc/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-1"></i> Sprunki OC</a></li>
+                    <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-1"></i> Characters</a></li>
                 </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="burger md:hidden cursor-pointer">
+                    <div class="line1 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line2 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
+                    <div class="line3 bg-white h-0.5 w-6 my-1 transition duration-300"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero" style="background-image: url(https://s.sprunkiincredibox.com/img/neesterversal-v3.jpg);">
-        <div class="hero-content container">
-            <h1>Neesterversal v3 Incredibox Game</h1>
-            <h2 style="color:white;">A Musical Journey with 20 Unique Neesters!</h2>
-            <p>Create your own beats with easy drag-and-drop gameplay!</p>
-            <a href="#play-neesterversal" class="cta-button"><i class="fas fa-play"></i> Play Now</a>
-        </div>
-    </section>
+    <!-- 移动端导航菜单 -->
+    <div class="mobile-nav fixed top-0 left-0 w-full h-screen bg-red-900 z-40 transform -translate-x-full transition duration-300 ease-in-out">
+        <ul class="flex flex-col items-center justify-center h-full space-y-8 text-white text-2xl">
+            <li><a href="../#play-now" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Play Sprunki</a></li>
+            <li><a href="../gray-sprunki/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Gray Sprunki</a></li>
+            <li><a href="../sprunki-oc/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-play mr-2"></i> Sprunki OC</a></li>
+            <li><a href="../sprunki-characters/" class="hover:text-yellow-400 transition duration-300"><i class="fas fa-users mr-2"></i> Characters</a></li>
+        </ul>
+    </div>
 
-    <section id="play-neesterversal" class="play-area">
-        <div class="container">
-            <h2>Play Neesterversal v3 Incredibox</h2>
-            <div class="game-container" style="background-color: black;">
-                <iframe src="//s.sprunkiincredibox.com/game/neesterversal/v3/index.html" allowtransparency="true" width="100%" height="802" frameborder="0" scrolling="no" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
+    <main class="pt-16">
+        <!-- Main Game Section with iframe -->
+        <section id="play-neesterversal" class="bg-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Game Container -->
+                    <div class="lg:w-2/3">
+                        <h1 class="text-4xl font-bold text-center mb-4 text-red-800">Play Neesterversal v3 Incredibox</h1>
+                        <h2 class="text-2xl font-semibold text-center mb-8 text-gray-700">A Musical Journey with 20 Unique Neesters!</h2>
+                        <div class="game-container relative w-full max-w-4xl mx-auto">
+                            <iframe id="game-iframe" src="//s.sprunkiincredibox.com/game/neesterversal/v3/index.html" frameborder="0" class="w-full h-[600px] rounded-lg shadow-2xl"></iframe>
+                            <button id="fullscreen-btn" class="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm transition duration-300 hover:bg-opacity-80 flex items-center">
+                                <i class="fas fa-expand mr-2"></i> Fullscreen
+                            </button>
+                            <button id="exit-fullscreen-btn" class="fixed top-4 right-4 bg-black bg-opacity-60 text-white border-none py-2 px-4 rounded cursor-pointer text-sm z-50 hidden">
+                                <i class="fas fa-compress mr-2"></i> Exit
+                            </button>
+                            <a href="https://sprunkiincredibox.com/" id="domain-watermark" class="absolute top-1/2 right-0 transform rotate-90 translate-y-[-50%] text-white hidden">SprunkiIncredibox.com</a>
+                        </div>
+                    </div>
 
-    <section id="related-games" class="related-games">
-        <div class="container">
-            <h2>Explore More Musical Adventures</h2>
-            <p>Discover other exciting music creation games in the Incredibox universe!</p>
-            <div class="game-card-grid">
-                <a href="../" class="game-card">
-                    <img src="https://s.sprunkiincredibox.com/img/sprunki.png" alt="Sprunki Incredibox">
-                    <h3>Sprunki Incredibox</h3>
-                    <p>Create spunky beats with quirky characters!</p>
-                </a>
-                <a href="./" class="game-card">
-                    <img src="https://s.sprunkiincredibox.com/img/neesterversal.png" alt="Classic Incredibox">
-                    <h3>Neesterversal v3 Incredibox</h3>
-                    <p>A Musical Journey with 20 Unique Neesters!</p>
-                </a>                
-                <a href="../gray-sprunki/" class="game-card">
-                    <img src="https://s.sprunkiincredibox.com/img/gray-sprunki.png" alt="Classic Incredibox">
-                    <h3>Gray Sprunki Incredibox</h3>
-                    <p>The Cool Cat of Incredibox Universe</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-neesterversal">
-        <div class="container">
-            <h2>About Neesterversal v3 Incredibox</h2>
-            <p>Neesterversal v3 is a special mode that expands the world of Incredibox. It features 20 different Neester characters, each with their own unique sounds and styles.</p>
-            <h3>How to Play:</h3>
-            <ul class="step-grid" style="list-style: none;">
-                <li class="step-item">Use headphones for a better experience!</li>
-                <li class="step-item">Drag and drop an icon on a character to have them sing.</li>
-                <li class="step-item">Drag down a character to have them stop singing.</li>
-            </ul>
-            <p>Welcome to the third edition of the Neesterversal, featuring 20 different Neesters from 20 different mods! There's some lore hidden in the game too, feel free to explore it!</p>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Exciting Features of Neesterversal v3</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="fas fa-users"></i>
-                    <h3>20 Unique Neesters</h3>
-                    <p>Mix and match characters from 20 different Incredibox mods for endless possibilities.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-music"></i>
-                    <h3>Rich Sound Library</h3>
-                    <p>Explore a diverse range of beats, effects, melodies, and voices to create your perfect track.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Intuitive Gameplay</h3>
-                    <p>Easy drag-and-drop interface makes music creation accessible to everyone.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-book"></i>
-                    <h3>Hidden Lore</h3>
-                    <p>Uncover the mysterious backstory of the Neesterversal as you play.</p>
+                    <!-- Explore More Section -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold text-center mb-20 text-red-800">Explore More</h2>
+                        <div id="recommended-games-container" class="grid grid-cols-2 gap-4"></div>
+                        <!-- JavaScript will populate this container -->
+                    </div>
+                    <script type="module">
+                        import { renderRecommendedGames } from '../js/explore.js';
+                        document.addEventListener('DOMContentLoaded', renderRecommendedGames);
+                    </script>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="how-to-play" class="how-to-play">
-        <div class="container">
-            <h2>How to Play Neesterversal v3</h2>
-            <div class="step-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>Choose Your Neesters</h3>
-                    <p>Select from 20 unique characters, each with their own sound.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>Drag and Drop</h3>
-                    <p>Place icons on characters to make them sing or produce sounds.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>Mix and Match</h3>
-                    <p>Experiment with different combinations to create your unique beat.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h3>Customize</h3>
-                    <p>Fine-tune your mix by removing or changing characters as you play.</p>
+        <section id="about" class="bg-gray py-16">
+            <div class="container bg mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">About Neesterversal v3 Incredibox</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">Neesterversal v3 is a special mode that expands the world of Incredibox. It features 20 different Neester characters, each with their own unique sounds and styles.</p>
+                <h3 class="text-2xl font-semibold text-center mb-6 text-red-700">How to Play:</h3>
+                <ul class="space-y-4 max-w-2xl mx-auto">
+                    <li class="flex items-center bg-gray-100 p-4 rounded-lg">
+                        <i class="fas fa-headphones text-2xl text-red-600 mr-4"></i>
+                        <span class="text-gray-700">Use headphones for a better experience!</span>
+                    </li>
+                    <li class="flex items-center bg-gray-100 p-4 rounded-lg">
+                        <i class="fas fa-mouse-pointer text-2xl text-red-600 mr-4"></i>
+                        <span class="text-gray-700">Drag and drop an icon on a character to have them sing.</span>
+                    </li>
+                    <li class="flex items-center bg-gray-100 p-4 rounded-lg">
+                        <i class="fas fa-arrow-down text-2xl text-red-600 mr-4"></i>
+                        <span class="text-gray-700">Drag down a character to have them stop singing.</span>
+                    </li>
+                </ul>
+                <p class="text-xl text-center mt-10 text-gray-600 max-w-3xl mx-auto">Welcome to the third edition of the Neesterversal, featuring 20 different Neesters from 20 different mods! There's some lore hidden in the game too, feel free to explore it!</p>
+            </div>
+        </section>
+
+        <section id="features" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Exciting Features of Neesterversal v3</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-users text-5xl mb-6 text-red-600"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">20 Unique Neesters</h3>
+                        <p class="text-gray-600">Mix and match characters from 20 different Incredibox mods for endless possibilities.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-music text-5xl mb-6 text-red-600"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Rich Sound Library</h3>
+                        <p class="text-gray-600">Explore a diverse range of beats, effects, melodies, and voices to create your perfect track.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-gamepad text-5xl mb-6 text-red-600"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Intuitive Gameplay</h3>
+                        <p class="text-gray-600">Easy drag-and-drop interface makes music creation accessible to everyone.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-book text-5xl mb-6 text-red-600"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Hidden Lore</h3>
+                        <p class="text-gray-600">Uncover the mysterious backstory of the Neesterversal as you play.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="characters" class="characters">
-        <div class="container">
-            <h2>Meet the Neester Characters</h2>
-            <p>Neesterversal v3 features a diverse cast of characters. They are divided into four categories: Beats, Effects, Melodies, and Voices.</p>
-            <!-- You can add a character grid or list here -->
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Players Are Saying</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"Neesterversal v3 is addictive! I love mixing different Neesters to create unique sounds."</p>
-                    <p class="author">- BeatMaster2000</p>
+        <section id="how-to-play" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">How to Play Neesterversal v3</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">1</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Choose Your Neesters</h3>
+                        <p class="text-gray-700">Select from 20 unique characters, each with their own sound.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">2</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Drag and Drop</h3>
+                        <p class="text-gray-700">Place icons on characters to make them sing or produce sounds.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">3</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Mix and Match</h3>
+                        <p class="text-gray-700">Experiment with different combinations to create your unique beat.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div class="text-3xl font-bold mb-6 text-red-600">4</div>
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Customize</h3>
+                        <p class="text-gray-700">Fine-tune your mix by removing or changing characters as you play.</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"The variety of characters and sounds in this game is amazing. Hours of fun!"</p>
-                    <p class="author">- MusicLover123</p>
+            </div>
+        </section>
+
+        <section id="characters" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Meet the Neester Characters</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">Neesterversal v3 features a diverse cast of characters. They are divided into four categories: Beats, Effects, Melodies, and Voices.</p>
+                <!-- You can add a character grid or list here -->
+            </div>
+        </section>
+
+        <section id="testimonials" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">What Players Are Saying</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <p class="text-gray-700 mb-4">"Neesterversal v3 is addictive! I love mixing different Neesters to create unique sounds."</p>
+                        <p class="text-red-600 font-semibold">- BeatMaster2000</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <p class="text-gray-700 mb-4">"The variety of characters and sounds in this game is amazing. Hours of fun!"</p>
+                        <p class="text-red-600 font-semibold">- MusicLover123</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <p class="text-gray-700 mb-4">"As a music teacher, I find Neesterversal v3 a great tool to introduce students to rhythm and composition."</p>
+                        <p class="text-red-600 font-semibold">- EduBeats</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"As a music teacher, I find Neesterversal v3 a great tool to introduce students to rhythm and composition."</p>
-                    <p class="author">- EduBeats</p>
+            </div>
+        </section>
+
+        <section id="creators" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Meet the Creators</h2>
+                <p class="text-xl text-center mb-10 text-gray-600 max-w-3xl mx-auto">Neesterversal v3 is a collaborative effort by many talented creators:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Beats:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Beat 1 - <strong>@NyankoBfLol</strong> (character template)</li>
+                            <li>Beat 2 - <strong>@22EI01</strong> [<strong>@Youxe</strong> template]</li>
+                            <li>Beat 3 - <strong>@BoowompSponge</strong></li>
+                            <li>Beat 4 - <strong>@bzplanned</strong></li>
+                            <li>Beat 5 - <strong>@Aceofspades_Official</strong></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Effects:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Effect 1 - <strong>@freepies</strong></li>
+                            <li>Effect 2 - <strong>@greenvrgt</strong></li>
+                            <li>Effect 3 - <strong>@DylanXD609</strong></li>
+                            <li>Effect 4 - <strong>@KIBRUBBA</strong></li>
+                            <li>Effect 5 - <strong>@-Eggfinite-</strong></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Melodies:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Melody 1 - <strong>@AKALuke04</strong></li>
+                            <li>Melody 2 - <strong>@JO_AYO</strong></li>
+                            <li>Melody 3 - <strong>@freepies</strong></li>
+                            <li>Melody 4 - <strong>@freepies</strong></li>
+                            <li>Melody 5 - <strong>@JJCATKILL</strong></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Voices:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>Voice 1 - <strong>@EricEpicGamer445</strong></li>
+                            <li>Voice 2 - <strong>@TeaWix</strong></li>
+                            <li>Voice 3 - <strong>@freepies</strong></li>
+                            <li>Voice 4 - <strong>@Youxe</strong></li>
+                            <li>Voice 5 - <strong>@freepies</strong></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="creators" class="creators">
-        <div class="container">
-            <h2>Meet the Creators</h2>
-            <p>Neesterversal v3 is a collaborative effort by many talented creators:</p>
-            <h3>Beats:</h3>
-            <ul class="step-item" style="list-style: none;">
-                <li>Beat 1 - <strong>@NyankoBfLol</strong> (character template)</li>
-                <li>Beat 2 - <strong>@22EI01</strong> [<strong>@Youxe</strong> template]</li>
-                <li>Beat 3 - <strong>@BoowompSponge</strong></li>
-                <li>Beat 4 - <strong>@bzplanned</strong></li>
-                <li>Beat 5 - <strong>@Aceofspades_Official</strong></li>
-            </ul>
-            <h3>Effects:</h3>
-            <ul class="step-item" style="list-style: none;">
-                <li>Effect 1 - <strong>@freepies</strong></li>
-                <li>Effect 2 - <strong>@greenvrgt</strong></li>
-                <li>Effect 3 - <strong>@DylanXD609</strong></li>
-                <li>Effect 4 - <strong>@KIBRUBBA</strong></li>
-                <li>Effect 5 - <strong>@-Eggfinite-</strong></li>
-            </ul>
-            <h3>Melodies:</h3>
-            <ul class="step-item" style="list-style: none;">
-                <li>Melody 1 - <strong>@AKALuke04</strong></li>
-                <li>Melody 2 - <strong>@JO_AYO</strong></li>
-                <li>Melody 3 - <strong>@freepies</strong></li>
-                <li>Melody 4 - <strong>@freepies</strong></li>
-                <li>Melody 5 - <strong>@JJCATKILL</strong></li>
-            </ul>
-            <h3>Voices:</h3>
-            <ul class="step-item" style="list-style: none;">
-                <li>Voice 1 - <strong>@EricEpicGamer445</strong></li>
-                <li>Voice 2 - <strong>@TeaWix</strong></li>
-                <li>Voice 3 - <strong>@freepies</strong></li>
-                <li>Voice 4 - <strong>@Youxe</strong></li>
-                <li>Voice 5 - <strong>@freepies</strong></li>
-            </ul>
-        </div>
-    </section>
+        <section id="faq" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12 text-red-800">Frequently Asked Questions</h2>
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Is Neesterversal v3 free to play?</h3>
+                        <p class="text-gray-700">Yes, Neesterversal v3 is completely free to play in your web browser.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Do I need to create an account to play?</h3>
+                        <p class="text-gray-700">No account is necessary. You can start playing immediately!</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Can I save my creations?</h3>
+                        <p class="text-gray-700">While the game doesn't have a built-in save feature, you can record your screen to capture your mixes.</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-2xl shadow-md transition duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl font-semibold mb-4 text-red-700">Is Neesterversal v3 suitable for children?</h3>
+                        <p class="text-gray-700">Absolutely! The game is fun and educational for all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>Is Neesterversal v3 free to play?</h3>
-                <p>Yes, Neesterversal v3 is completely free to play in your web browser.</p>
+        <section class="bg-gradient-to-r from-red-800 to-red-900 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl font-bold mb-6">Experience Neesterversal v3 Now!</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">Create your unique music with 20 different Neesters. Endless possibilities await you!</p>
+                <a href="#play-neesterversal" class="bg-yellow-400 text-red-900 font-bold text-xl py-4 px-10 rounded-full hover:bg-yellow-300 transition duration-300 inline-block hover:shadow-lg transform hover:-translate-y-1">Start Playing for Free</a>
             </div>
-            <div class="faq-item">
-                <h3>Do I need to create an account to play?</h3>
-                <p>No account is necessary. You can start playing immediately!</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I save my creations?</h3>
-                <p>While the game doesn't have a built-in save feature, you can record your screen to capture your mixes.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is Neesterversal v3 suitable for children?</h3>
-                <p>Absolutely! The game is fun and educational for all ages.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="cta">
-        <div class="container faq-item">
-            <h2>Experience Neesterversal v3 Now!</h2>
-            <p style="text-align: center;">Create your unique music with 20 different Neesters. Endless possibilities await you!</p>
-            <p style="text-align: center;margin-top: 15px;"><a href="#play-neesterversal" class="cta-button" style="text-align: center;">Start Playing for Free</a></p>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <p class="text-center">&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 SprunkiIncredibox.com. All rights reserved. Embrace the Sprunki spirit!</p>
-        </div>
-        <div class="language-selector">
-            <p>Choose your language:</p>
-            <ul>
-                <li><a href="./" hreflang="en">English</a></li>
+        <div class="language-selector mt-8">
+            <p class="text-center mb-4">Choose your language:</p>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="./" hreflang="en" class="text-white hover:text-yellow-400 transition duration-300">English</a></li>
             </ul>
         </div>
     </footer>
 
-    <script>
+    <script type="module">
+        import { enterFullscreen, exitFullscreen, handleFullscreenChange, autoEnterFullscreen } from '../fullscreen.js';
+
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const exitFullscreenBtn = document.getElementById('exit-fullscreen-btn');
+        const gameIframe = document.getElementById('game-iframe');
+        const gameContainer = document.querySelector('.game-container');
+        const domainWatermark = document.getElementById('domain-watermark');
+
+        fullscreenBtn.addEventListener('click', () => {
+            enterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        exitFullscreenBtn.addEventListener('click', () => {
+            exitFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('webkitfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('mozfullscreenchange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+        document.addEventListener('MSFullscreenChange', () => {
+            handleFullscreenChange(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
+        window.addEventListener('load', () => {
+            autoEnterFullscreen(gameContainer, gameIframe, fullscreenBtn, exitFullscreenBtn, domainWatermark);
+        });
+
         const navSlide = () => {
             const burger = document.querySelector('.burger');
             const nav = document.querySelector('.nav-links');
             const navLinks = document.querySelectorAll('.nav-links li');
-            
+
             burger.addEventListener('click', () => {
                 nav.classList.toggle('nav-active');
-                
+
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';
@@ -323,7 +337,7 @@
                         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
                     }
                 });
-                
+
                 burger.classList.toggle('toggle');
             });
         }
